@@ -119,23 +119,23 @@ Bullet list elements illustrate examples, while numbered list elements indicate 
 
 ### Ch.3 Section 2 Programmer defined functions
 
-- [Temperature conversion](03_Function/02_Programmer_Defined_Function/3_0_1_Temp_conversion.cpp) - Celsius to Fahrenheit conversion using a helper function.
-- [Ice cream division](03_Function/02_Programmer_Defined_Function/3_0_2_Ice_cream_division.cpp) - Divide total ice cream among customers with zero-check.
-- [Average yield (pea)](03_Function/02_Programmer_Defined_Function/3_0_3_Avg_yield_pea.cpp) - Estimate total peas and yield using a helper.
-- [Area of circle / Volume of sphere](03_Function/02_Programmer_Defined_Function/3_0_4_Area_circle_volume_sphere.cpp) - Uses `constexpr double PI` for area and volume.
-7. [Output example](03_Function/02_Programmer_Defined_Function/3_7_Output.cpp) - Small function return example producing "Wow".
-8. [Function sum](03_Function/02_Programmer_Defined_Function/3_8_Function_sum.cpp) - Returns sum of three `int` arguments.
-9. [Positive / Negative](03_Function/02_Programmer_Defined_Function/3_9_Positive_negative.cpp) - Returns `'P'` or `'N'` based on a `double`.
-10. [Function definition rule](03_Function/02_Programmer_Defined_Function/3_10_Function_definition.cpp) - Notes that function definitions cannot be nested.
-11. [Predefined vs user-defined](03_Function/02_Programmer_Defined_Function/3_11_Predefined_vs_user_defined.cpp) - Comparison of invocation and differences.
-12. [In-order check](03_Function/02_Programmer_Defined_Function/3_12_Order_function.cpp) - `inOrder` checks ascending order for three `int`s.
-13. [Even check](03_Function/02_Programmer_Defined_Function/3_13_Even_function.cpp) - `even` returns whether an `int` is even.
-14. [Is digit](03_Function/02_Programmer_Defined_Function/3_14_Digits.cpp) - `isDigit` checks if a `char` is a decimal digit.
-15. [Greetings examples](03_Function/02_Programmer_Defined_Function/3_15_Greetings.cpp) - `friendly` and `shy` functions demonstrating control flow.
-16. [Runtime error discussion](03_Function/02_Programmer_Defined_Function/3_16_Runtime_error.cpp) - Omitting `return` in `void` and divide-by-zero pitfall.
-17. [Display products](03_Function/02_Programmer_Defined_Function/3_17_Display_products.cpp) - Void function that outputs product of three integers.
-18. [Void vs int main](03_Function/02_Programmer_Defined_Function/3_18_Void_vs_int.cpp) - Notes on `void main()` vs `int main()` and return behavior.
-19. [Pre/Post condition (sqrt)](03_Function/02_Programmer_Defined_Function/3_19_Pre_Post_condition.cpp) - Precondition/postcondition example for `sqrt`.
+- [Temperature conversion](03_Function/02_Programmer_Defined_Functions/3_0_1_Temp_conversion.cpp) - Celsius to Fahrenheit conversion using a helper function.
+- [Ice cream division](03_Function/02_Programmer_Defined_Functions/3_0_2_Ice_cream_division.cpp) - Divide total ice cream among customers with zero-check.
+- [Average yield (pea)](03_Function/02_Programmer_Defined_Functions/3_0_3_Avg_yield_pea.cpp) - Estimate total peas and yield using a helper.
+- [Area of circle / Volume of sphere](03_Function/02_Programmer_Defined_Functions/3_0_4_Area_circle_volume_sphere.cpp) - Uses `constexpr double PI` for area and volume.
+7. [Output example](03_Function/02_Programmer_Defined_Functions/3_7_Output.cpp) - Small function return example producing "Wow".
+8. [Function sum](03_Function/02_Programmer_Defined_Functions/3_8_Function_sum.cpp) - Returns sum of three `int` arguments.
+9. [Positive / Negative](03_Function/02_Programmer_Defined_Functions/3_9_Positive_negative.cpp) - Returns `'P'` or `'N'` based on a `double`.
+10. [Function definition rule](03_Function/02_Programmer_Defined_Functions/3_10_Function_definition.cpp) - Notes that function definitions cannot be nested.
+11. [Predefined vs user-defined](03_Function/02_Programmer_Defined_Functions/3_11_Predefined_vs_user_defined.cpp) - Comparison of invocation and differences.
+12. [In-order check](03_Function/02_Programmer_Defined_Functions/3_12_Order_function.cpp) - `inOrder` checks ascending order for three `int`s.
+13. [Even check](03_Function/02_Programmer_Defined_Functions/3_13_Even_function.cpp) - `even` returns whether an `int` is even.
+14. [Is digit](03_Function/02_Programmer_Defined_Functions/3_14_Digits.cpp) - `isDigit` checks if a `char` is a decimal digit.
+15. [Greetings examples](03_Function/02_Programmer_Defined_Functions/3_15_Greetings.cpp) - `friendly` and `shy` functions demonstrating control flow.
+16. [Runtime error discussion](03_Function/02_Programmer_Defined_Functions/3_16_Runtime_error.cpp) - Omitting `return` in `void` and divide-by-zero pitfall.
+17. [Display products](03_Function/02_Programmer_Defined_Functions/3_17_Display_products.cpp) - Void function that outputs product of three integers.
+18. [Void vs int main](03_Function/02_Programmer_Defined_Functions/3_18_Void_vs_int.cpp) - Notes on `void main()` vs `int main()` and return behavior.
+19. [Pre/Post condition (sqrt)](03_Function/02_Programmer_Defined_Functions/3_19_Pre_Post_condition.cpp) - Precondition/postcondition example for `sqrt`.
 
 ### Ch.3 Section 3 Scope rules
 
