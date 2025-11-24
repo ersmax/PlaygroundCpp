@@ -3,12 +3,15 @@
 #
 
 # Add source to this project's executable.
-# add_executable (Cpp_vs_Java "02_Expressions/1_0_0_Cpp_vs_Java.cpp")
+# add_executable ()
 
 # List all folders
 set(FOLDERS
-    "02_Expressions"
-    "03_Console_In_Out"
+    "01_Boolean_Expressions"
+    "02_Branching"
+    "03_Loops"
+    "04_File_input"
+    
 )
 
 # Automatically get all .cpp and headers files 
