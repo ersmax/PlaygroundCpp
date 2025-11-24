@@ -41,10 +41,10 @@ Bullet list elements illustrate examples, while numbered list elements indicate 
 
 ### Ch.2 Section 1 Boolean expressions
 
-1. [Boolean expressions](02_Flow_of_control/01_Boolean_expressions/2_1_boolean_exp.cpp) - Evaluates a set of Boolean expressions with `count = 0` and `limit = 10`, demonstrates short-circuiting and notes division-by-zero pitfalls.
-2. [Boolean interval](02_Flow_of_control/01_Boolean_expressions/2_2_Boolean_interval.cpp) - Explains why `2 < x < 3` is incorrect in C\+\+ and shows the correct expression `2 < x && x < 3`.
-3. [Quadratic positive region](02_Flow_of_control/01_Boolean_expressions/2_3_Quadratic_exp.cpp) - Shows the Boolean condition where `x^2 - x - 2` is positive: `x < -1 || x > 2`.
-4. [Quadratic negative region](02_Flow_of_control/01_Boolean_expressions/2_4_Quadratic_exp_negative.cpp) - Shows the Boolean condition where `x^2 - 4x + 3` is negative: `x > 1 && x < 3`.
+1. [Boolean expressions](02_Flow_of_control/01_Boolean_Expressions/2_1_boolean_exp.cpp) - Evaluates a set of Boolean expressions with `count = 0` and `limit = 10`, demonstrates short-circuiting and notes division-by-zero pitfalls.
+2. [Boolean interval](02_Flow_of_control/01_Boolean_Expressions/2_2_Boolean_interval.cpp) - Explains why `2 < x < 3` is incorrect in C\+\+ and shows the correct expression `2 < x && x < 3`.
+3. [Quadratic positive region](02_Flow_of_control/01_Boolean_Expressions/2_3_Quadratic_exp.cpp) - Shows the Boolean condition where `x^2 - x - 2` is positive: `x < -1 || x > 2`.
+4. [Quadratic negative region](02_Flow_of_control/01_Boolean_Expressions/2_4_Quadratic_exp_negative.cpp) - Shows the Boolean condition where `x^2 - 4x + 3` is negative: `x > 1 && x < 3`.
 
 ### Ch.2 Section 2 Branching
 
