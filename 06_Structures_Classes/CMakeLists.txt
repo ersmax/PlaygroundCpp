@@ -3,6 +3,6 @@
 #
 
 # Add source to this project's executable.
-add_executable (06_Structures_Classes "06_Structures_Classes.cpp" "06_Structures_Classes.h")
+# add_executable (06_Structures_Classeph")
 
 # TODO: Add tests and install targets if needed.
