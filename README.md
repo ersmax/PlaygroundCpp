@@ -41,64 +41,64 @@ Bullet list elements illustrate examples, while numbered list elements indicate 
 
 ### Ch.2 Section 1 Boolean expressions
 
-1. [Boolean expressions](02_Flow_of_control/01_Boolean_Expressions/2_1_boolean_exp.cpp) - Evaluates a set of Boolean expressions with `count = 0` and `limit = 10`, demonstrates short-circuiting and notes division-by-zero pitfalls.
-2. [Boolean interval](02_Flow_of_control/01_Boolean_Expressions/2_2_Boolean_interval.cpp) - Explains why `2 < x < 3` is incorrect in C\+\+ and shows the correct expression `2 < x && x < 3`.
-3. [Quadratic positive region](02_Flow_of_control/01_Boolean_Expressions/2_3_Quadratic_exp.cpp) - Shows the Boolean condition where `x^2 - x - 2` is positive: `x < -1 || x > 2`.
-4. [Quadratic negative region](02_Flow_of_control/01_Boolean_Expressions/2_4_Quadratic_exp_negative.cpp) - Shows the Boolean condition where `x^2 - 4x + 3` is negative: `x > 1 && x < 3`.
+1. [Boolean expressions](02_Flow_of_Control/01_Boolean_Expressions/2_1_boolean_exp.cpp) - Evaluates a set of Boolean expressions with `count = 0` and `limit = 10`, demonstrates short-circuiting and notes division-by-zero pitfalls.
+2. [Boolean interval](02_Flow_of_Control/01_Boolean_Expressions/2_2_Boolean_interval.cpp) - Explains why `2 < x < 3` is incorrect in C\+\+ and shows the correct expression `2 < x && x < 3`.
+3. [Quadratic positive region](02_Flow_of_Control/01_Boolean_Expressions/2_3_Quadratic_exp.cpp) - Shows the Boolean condition where `x^2 - x - 2` is positive: `x < -1 || x > 2`.
+4. [Quadratic negative region](02_Flow_of_Control/01_Boolean_Expressions/2_4_Quadratic_exp_negative.cpp) - Shows the Boolean condition where `x^2 - 4x + 3` is negative: `x > 1 && x < 3`.
 
 ### Ch.2 Section 2 Branching
 
-- [Temperatures](02_Flow_of_control/02_Branching/2_0_1_temperatures.cpp) - Temperature-based branching example (if-else).
-- [Vehicle class](02_Flow_of_control/02_Branching/2_0_2_Vehicle_class.cpp) - Switch statement for vehicle toll classes.
-- [Greetings (while)](02_Flow_of_control/02_Branching/2_0_3_Greetings.cpp) - Repeated greetings using `while`.
-- [Greetings once (do-while)](02_Flow_of_control/02_Branching/2_0_4_Greetings_once.cpp) - At-least-once greetings using `do-while`.
-- [Calories](02_Flow_of_control/02_Branching/2_0_6_Calories.cpp) - Summing item calories with a loop.
-5. [Division short-circuit](02_Flow_of_control/02_Branching/2_5_Division_0.cpp) - Short-circuit boolean example preventing division by zero.
-6. [High greater](02_Flow_of_control/02_Branching/2_6_High_greater.cpp) - Simple if-else comparing `score` to 100.
-7. [Solvent vs Bankrupt](02_Flow_of_control/02_Branching/2_7_Solvent_Bankrupt.cpp) - Solvent vs Bankrupt logic updating `savings`.
-8. [Passed/Failed](02_Flow_of_control/02_Branching/2_8_Passed_Failed.cpp) - Compound condition for pass/fail.
-9. [Temperature/Pressure](02_Flow_of_control/02_Branching/2_9_Temperature_Pressure.cpp) - Warning/OK using logical OR.
-10. [Outputs truthiness](02_Flow_of_control/02_Branching/2_10_Outputs.cpp) - Demonstrates truthiness of 0, 1, -1 in `if`.
-11. [Greetings options](02_Flow_of_control/02_Branching/2_11_Greetings_options.cpp) - Nested `if` output/flow example.
-12. [Sizes](02_Flow_of_control/02_Branching/2_12_Sizes.cpp) - Multi-branch size classification example.
-13. [Smaller sizes](02_Flow_of_control/02_Branching/2_13_Smaller_sizes.cpp) - Variant for negative value.
-14. [Larger sizes](02_Flow_of_control/02_Branching/2_14_Larger_sizes.cpp) - Variant for zero value.
-15. [Multiway If-else](02_Flow_of_control/02_Branching/2_15_Multiway_If_else.cpp) - Multiway classification of integer `n`.
-16. [Directions](02_Flow_of_control/02_Branching/2_16_Directions.cpp) - Enum ordering demonstration.
-17. [Updated directions](02_Flow_of_control/02_Branching/2_17_Updated_directions.cpp) - Enum with explicit values and usage.
+- [Temperatures](02_Flow_of_Control/02_Branching/2_0_1_temperatures.cpp) - Temperature-based branching example (if-else).
+- [Vehicle class](02_Flow_of_Control/02_Branching/2_0_2_Vehicle_class.cpp) - Switch statement for vehicle toll classes.
+- [Greetings (while)](02_Flow_of_Control/02_Branching/2_0_3_Greetings.cpp) - Repeated greetings using `while`.
+- [Greetings once (do-while)](02_Flow_of_Control/02_Branching/2_0_4_Greetings_once.cpp) - At-least-once greetings using `do-while`.
+- [Calories](02_Flow_of_Control/02_Branching/2_0_6_Calories.cpp) - Summing item calories with a loop.
+5. [Division short-circuit](02_Flow_of_Control/02_Branching/2_5_Division_0.cpp) - Short-circuit boolean example preventing division by zero.
+6. [High greater](02_Flow_of_Control/02_Branching/2_6_High_greater.cpp) - Simple if-else comparing `score` to 100.
+7. [Solvent vs Bankrupt](02_Flow_of_Control/02_Branching/2_7_Solvent_Bankrupt.cpp) - Solvent vs Bankrupt logic updating `savings`.
+8. [Passed/Failed](02_Flow_of_Control/02_Branching/2_8_Passed_Failed.cpp) - Compound condition for pass/fail.
+9. [Temperature/Pressure](02_Flow_of_Control/02_Branching/2_9_Temperature_Pressure.cpp) - Warning/OK using logical OR.
+10. [Outputs truthiness](02_Flow_of_Control/02_Branching/2_10_Outputs.cpp) - Demonstrates truthiness of 0, 1, -1 in `if`.
+11. [Greetings options](02_Flow_of_Control/02_Branching/2_11_Greetings_options.cpp) - Nested `if` output/flow example.
+12. [Sizes](02_Flow_of_Control/02_Branching/2_12_Sizes.cpp) - Multi-branch size classification example.
+13. [Smaller sizes](02_Flow_of_Control/02_Branching/2_13_Smaller_sizes.cpp) - Variant for negative value.
+14. [Larger sizes](02_Flow_of_Control/02_Branching/2_14_Larger_sizes.cpp) - Variant for zero value.
+15. [Multiway If-else](02_Flow_of_Control/02_Branching/2_15_Multiway_If_else.cpp) - Multiway classification of integer `n`.
+16. [Directions](02_Flow_of_Control/02_Branching/2_16_Directions.cpp) - Enum ordering demonstration.
+17. [Updated directions](02_Flow_of_Control/02_Branching/2_17_Updated_directions.cpp) - Enum with explicit values and usage.
 
 ### Ch.2 Section 3 Loops
 
-- [Negative numbers](02_Flow_of_control/03_Loops/2_0_1_Negative_numbers.cpp) - Read 4 negative numbers, break on non\-negative input and sum the valid entries.
-- [Negative continue](02_Flow_of_control/03_Loops/2_0_2_Negative_continue.cpp) - Read 4 negative numbers, use `continue` to re\-prompt on non\-negative input and sum.
-18. [Loop1 (post\-decrement)](02_Flow_of_control/03_Loops/2_18_Loop1.cpp) - Demonstrates `while(count-- > 0)` output ordering.
-19. [Loop2 (pre\-decrement)](02_Flow_of_control/03_Loops/2_19_Loop2.cpp) - Demonstrates `while(--count > 0)` output ordering.
-20. [Loop3 (do\-while with n++)](02_Flow_of_control/03_Loops/2_20_Loop3.cpp) - `do`/`while` with post\-increment shows outputs ending at 4.
-21. [Loop4 (do\-while with ++n)](02_Flow_of_control/03_Loops/2_21_Loop4.cpp) - `do`/`while` with pre\-increment shows outputs ending at 3.
-22. [Loop5](02_Flow_of_control/03_Loops/2_22_Loop5.cpp) - `while` decrementing by 3 prints 10, 7, 4, 1.
-23. [Loop6](02_Flow_of_control/03_Loops/2_23_Loop6.cpp) - `while(x < 0)` with `x = 10` produces no output.
-24. [Loop7 (do\-while)](02_Flow_of_control/03_Loops/2_24_Loop7.cpp) - `do`/`while` variant that prints 10, 7, 4, 1.
-25. [Loop8 (do\-while negative start)](02_Flow_of_control/03_Loops/2_25_Loop8.cpp) - `do`/`while` with negative start prints the initial value once.
-26. [While vs Do\-while](02_Flow_of_control/03_Loops/2_26_Loop9.cpp) - Explains the key difference: condition check before vs after body.
-27. [For loop 1](02_Flow_of_control/03_Loops/2_27_For_loop1.cpp) - `for` producing 2 4 6 8.
-28. [For loop 2](02_Flow_of_control/03_Loops/2_28_For_loop2.cpp) - `for` decrementing by 2 printing `Hello` with the loop variable.
-29. [For loop 3](02_Flow_of_control/03_Loops/2_29_For_loop3.cpp) - `for` with `double` step prints 2 1.5 1 0.5.
-30. [For loop rewrites](02_Flow_of_control/03_Loops/2_30_For_loop4.cpp) - Rewrite `while`/`do` examples as `for` loops.
-31. [For loop log](02_Flow_of_control/03_Loops/2_31_For_loop5.cpp) - Counts doublings until a limit (prints `1024 10`).
-32. [For loop with empty body](02_Flow_of_control/03_Loops/2_32_For_loop6.cpp) - Demonstrates trailing semicolon producing an empty loop body.
-33. [For loop infinite pitfall](02_Flow_of_control/03_Loops/2_33_For_loop7.cpp) - Shows an unintended infinite loop when starting at 0 and multiplying.
-34. [Loop choice guidance](02_Flow_of_control/03_Loops/2_34_For_loop8.cpp) - Advice on when to use `while`, `do`/`while`, or `for`.
-35. [Infinite growth example](02_Flow_of_control/03_Loops/2_35_For_loop10.cpp) - `while` that increases the variable causing an infinite loop.
-36. [Break statement](02_Flow_of_control/03_Loops/2_36_Break_statement.cpp) - Explains `break` behavior in loops and `switch`.
-37. [Nested loops output](02_Flow_of_control/03_Loops/2_37_Output.cpp) - Nested `for` loops producing a multiplication table.
+- [Negative numbers](02_Flow_of_Control/03_Loops/2_0_1_Negative_numbers.cpp) - Read 4 negative numbers, break on non\-negative input and sum the valid entries.
+- [Negative continue](02_Flow_of_Control/03_Loops/2_0_2_Negative_continue.cpp) - Read 4 negative numbers, use `continue` to re\-prompt on non\-negative input and sum.
+18. [Loop1 (post\-decrement)](02_Flow_of_Control/03_Loops/2_18_Loop1.cpp) - Demonstrates `while(count-- > 0)` output ordering.
+19. [Loop2 (pre\-decrement)](02_Flow_of_Control/03_Loops/2_19_Loop2.cpp) - Demonstrates `while(--count > 0)` output ordering.
+20. [Loop3 (do\-while with n++)](02_Flow_of_Control/03_Loops/2_20_Loop3.cpp) - `do`/`while` with post\-increment shows outputs ending at 4.
+21. [Loop4 (do\-while with ++n)](02_Flow_of_Control/03_Loops/2_21_Loop4.cpp) - `do`/`while` with pre\-increment shows outputs ending at 3.
+22. [Loop5](02_Flow_of_Control/03_Loops/2_22_Loop5.cpp) - `while` decrementing by 3 prints 10, 7, 4, 1.
+23. [Loop6](02_Flow_of_Control/03_Loops/2_23_Loop6.cpp) - `while(x < 0)` with `x = 10` produces no output.
+24. [Loop7 (do\-while)](02_Flow_of_Control/03_Loops/2_24_Loop7.cpp) - `do`/`while` variant that prints 10, 7, 4, 1.
+25. [Loop8 (do\-while negative start)](02_Flow_of_Control/03_Loops/2_25_Loop8.cpp) - `do`/`while` with negative start prints the initial value once.
+26. [While vs Do\-while](02_Flow_of_Control/03_Loops/2_26_Loop9.cpp) - Explains the key difference: condition check before vs after body.
+27. [For loop 1](02_Flow_of_Control/03_Loops/2_27_For_loop1.cpp) - `for` producing 2 4 6 8.
+28. [For loop 2](02_Flow_of_Control/03_Loops/2_28_For_loop2.cpp) - `for` decrementing by 2 printing `Hello` with the loop variable.
+29. [For loop 3](02_Flow_of_Control/03_Loops/2_29_For_loop3.cpp) - `for` with `double` step prints 2 1.5 1 0.5.
+30. [For loop rewrites](02_Flow_of_Control/03_Loops/2_30_For_loop4.cpp) - Rewrite `while`/`do` examples as `for` loops.
+31. [For loop log](02_Flow_of_Control/03_Loops/2_31_For_loop5.cpp) - Counts doublings until a limit (prints `1024 10`).
+32. [For loop with empty body](02_Flow_of_Control/03_Loops/2_32_For_loop6.cpp) - Demonstrates trailing semicolon producing an empty loop body.
+33. [For loop infinite pitfall](02_Flow_of_Control/03_Loops/2_33_For_loop7.cpp) - Shows an unintended infinite loop when starting at 0 and multiplying.
+34. [Loop choice guidance](02_Flow_of_Control/03_Loops/2_34_For_loop8.cpp) - Advice on when to use `while`, `do`/`while`, or `for`.
+35. [Infinite growth example](02_Flow_of_Control/03_Loops/2_35_For_loop10.cpp) - `while` that increases the variable causing an infinite loop.
+36. [Break statement](02_Flow_of_Control/03_Loops/2_36_Break_statement.cpp) - Explains `break` behavior in loops and `switch`.
+37. [Nested loops output](02_Flow_of_Control/03_Loops/2_37_Output.cpp) - Nested `for` loops producing a multiplication table.
 
 ### Ch.2 Section 4 File Input
 
-- [Read text](02_Flow_of_control/04_File_input/2_4_0_1_Read_text.cpp) - Reads `score`, `firstName`, `lastName` from `99_Text_files/0_player.txt` and prints them.
-- [Read until end](02_Flow_of_control/04_File_input/2_4_0_2_Read_end.cpp) - Reads every word using `while (inputStream >> text)` and prints each on a line.
-38. [Word output fix](02_Flow_of_control/04_File_input/2_38_Word_output.cpp) - Corrects a faulty read loop and explains why the original approach failed.
-39. [Read entries](02_Flow_of_control/04_File_input/2_39_Read_entries.cpp) - Reads a count followed by name/score pairs and prints `Name, score` lines.
-40. [Read highest](02_Flow_of_control/04_File_input/2_40_Read_highest.cpp) - Finds and prints the player with the highest score from the scores file.
+- [Read text](02_Flow_of_Control/04_File_Input/2_4_0_1_Read_text.cpp) - Reads `score`, `firstName`, `lastName` from `99_Text_files/0_player.txt` and prints them.
+- [Read until end](02_Flow_of_Control/04_File_Input/2_4_0_2_Read_end.cpp) - Reads every word using `while (inputStream >> text)` and prints each on a line.
+38. [Word output fix](02_Flow_of_Control/04_File_Input/2_38_Word_output.cpp) - Corrects a faulty read loop and explains why the original approach failed.
+39. [Read entries](02_Flow_of_Control/04_File_Input/2_39_Read_entries.cpp) - Reads a count followed by name/score pairs and prints `Name, score` lines.
+40. [Read highest](02_Flow_of_Control/04_File_Input/2_40_Read_highest.cpp) - Finds and prints the player with the highest score from the scores file.
 
 ---
 
@@ -119,23 +119,23 @@ Bullet list elements illustrate examples, while numbered list elements indicate 
 
 ### Ch.3 Section 2 Programmer defined functions
 
-- [Temperature conversion](03_Function/02_Programmer_defined_function/3_0_1_Temp_conversion.cpp) - Celsius to Fahrenheit conversion using a helper function.
-- [Ice cream division](03_Function/02_Programmer_defined_function/3_0_2_Ice_cream_division.cpp) - Divide total ice cream among customers with zero-check.
-- [Average yield (pea)](03_Function/02_Programmer_defined_function/3_0_3_Avg_yield_pea.cpp) - Estimate total peas and yield using a helper.
-- [Area of circle / Volume of sphere](03_Function/02_Programmer_defined_function/3_0_4_Area_circle_volume_sphere.cpp) - Uses `constexpr double PI` for area and volume.
-7. [Output example](03_Function/02_Programmer_defined_function/3_7_Output.cpp) - Small function return example producing "Wow".
-8. [Function sum](03_Function/02_Programmer_defined_function/3_8_Function_sum.cpp) - Returns sum of three `int` arguments.
-9. [Positive / Negative](03_Function/02_Programmer_defined_function/3_9_Positive_negative.cpp) - Returns `'P'` or `'N'` based on a `double`.
-10. [Function definition rule](03_Function/02_Programmer_defined_function/3_10_Function_definition.cpp) - Notes that function definitions cannot be nested.
-11. [Predefined vs user-defined](03_Function/02_Programmer_defined_function/3_11_Predefined_vs_user_defined.cpp) - Comparison of invocation and differences.
-12. [In-order check](03_Function/02_Programmer_defined_function/3_12_Order_function.cpp) - `inOrder` checks ascending order for three `int`s.
-13. [Even check](03_Function/02_Programmer_defined_function/3_13_Even_function.cpp) - `even` returns whether an `int` is even.
-14. [Is digit](03_Function/02_Programmer_defined_function/3_14_Digits.cpp) - `isDigit` checks if a `char` is a decimal digit.
-15. [Greetings examples](03_Function/02_Programmer_defined_function/3_15_Greetings.cpp) - `friendly` and `shy` functions demonstrating control flow.
-16. [Runtime error discussion](03_Function/02_Programmer_defined_function/3_16_Runtime_error.cpp) - Omitting `return` in `void` and divide-by-zero pitfall.
-17. [Display products](03_Function/02_Programmer_defined_function/3_17_Display_products.cpp) - Void function that outputs product of three integers.
-18. [Void vs int main](03_Function/02_Programmer_defined_function/3_18_Void_vs_int.cpp) - Notes on `void main()` vs `int main()` and return behavior.
-19. [Pre/Post condition (sqrt)](03_Function/02_Programmer_defined_function/3_19_Pre_Post_condition.cpp) - Precondition/postcondition example for `sqrt`.
+- [Temperature conversion](03_Function/02_Programmer_Defined_Function/3_0_1_Temp_conversion.cpp) - Celsius to Fahrenheit conversion using a helper function.
+- [Ice cream division](03_Function/02_Programmer_Defined_Function/3_0_2_Ice_cream_division.cpp) - Divide total ice cream among customers with zero-check.
+- [Average yield (pea)](03_Function/02_Programmer_Defined_Function/3_0_3_Avg_yield_pea.cpp) - Estimate total peas and yield using a helper.
+- [Area of circle / Volume of sphere](03_Function/02_Programmer_Defined_Function/3_0_4_Area_circle_volume_sphere.cpp) - Uses `constexpr double PI` for area and volume.
+7. [Output example](03_Function/02_Programmer_Defined_Function/3_7_Output.cpp) - Small function return example producing "Wow".
+8. [Function sum](03_Function/02_Programmer_Defined_Function/3_8_Function_sum.cpp) - Returns sum of three `int` arguments.
+9. [Positive / Negative](03_Function/02_Programmer_Defined_Function/3_9_Positive_negative.cpp) - Returns `'P'` or `'N'` based on a `double`.
+10. [Function definition rule](03_Function/02_Programmer_Defined_Function/3_10_Function_definition.cpp) - Notes that function definitions cannot be nested.
+11. [Predefined vs user-defined](03_Function/02_Programmer_Defined_Function/3_11_Predefined_vs_user_defined.cpp) - Comparison of invocation and differences.
+12. [In-order check](03_Function/02_Programmer_Defined_Function/3_12_Order_function.cpp) - `inOrder` checks ascending order for three `int`s.
+13. [Even check](03_Function/02_Programmer_Defined_Function/3_13_Even_function.cpp) - `even` returns whether an `int` is even.
+14. [Is digit](03_Function/02_Programmer_Defined_Function/3_14_Digits.cpp) - `isDigit` checks if a `char` is a decimal digit.
+15. [Greetings examples](03_Function/02_Programmer_Defined_Function/3_15_Greetings.cpp) - `friendly` and `shy` functions demonstrating control flow.
+16. [Runtime error discussion](03_Function/02_Programmer_Defined_Function/3_16_Runtime_error.cpp) - Omitting `return` in `void` and divide-by-zero pitfall.
+17. [Display products](03_Function/02_Programmer_Defined_Function/3_17_Display_products.cpp) - Void function that outputs product of three integers.
+18. [Void vs int main](03_Function/02_Programmer_Defined_Function/3_18_Void_vs_int.cpp) - Notes on `void main()` vs `int main()` and return behavior.
+19. [Pre/Post condition (sqrt)](03_Function/02_Programmer_Defined_Function/3_19_Pre_Post_condition.cpp) - Precondition/postcondition example for `sqrt`.
 
 ### Ch.3 Section 3 Scope rules
 
