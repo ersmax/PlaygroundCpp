@@ -7,8 +7,10 @@
 
 # List all folders
 set(FOLDERS
-    "01_Structures"
-    
+    "01_Introduction_Arrays"
+    "02_Arrays_in_Functions"
+    "03_Programming_with_Arrays"
+    "04_Multidimensional_Arrays"
 )
 
 # Automatically get all .cpp and headers files 
