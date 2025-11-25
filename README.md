@@ -12,17 +12,17 @@ Bullet list elements illustrate examples, while numbered list elements indicate 
 
 ### Ch.1 Section 2 Expressions
 
-- [Cpp vs Java](01_Basics/02_Expressions/1_0_0_Cpp_vs_Java.cpp) - Explains differences between Java and C\+\+ handling of `char`/`byte` and Unicode.
-- [Greetings](01_Basics/02_Expressions/1_0_1_Greetings.cpp) - Greeting program that asks how many languages the user used and responds.
-- [Deposit](01_Basics/02_Expressions/1_0_2_Deposit.cpp) - Reads a deposit amount and computes the balance after one year with a fixed interest rate.
-1. [Declarations](01_Basics/02_Expressions/1_1_Declaration_Int.cpp) - Shows two ways to declare and initialize `feet` and `inches` variables.
-2. [Declarations double](01_Basics/02_Expressions/1_2_Declaration_Double.cpp) - Shows two ways to declare and initialize `count` (int) and `distance` (double).
-3. [Uninitialized Variables](01_Basics/02_Expressions/1_3_Undefined_Behaviour_Undefined_Var.cpp) - Demonstrates undefined/garbage values from uninitialized local variables and behavior.
-4. [Expressions Examples](01_Basics/02_Expressions/1_4_Expressions.cpp) - Converts simple mathematical formulas into C\+\+ expressions with user input.
-5. [Output Characters](01_Basics/02_Expressions/1_5_Output.cpp) - Shows character assignments and outputs the resulting character sequence.
-6. [Integer Division](01_Basics/02_Expressions/1_6_Output.cpp) - Demonstrates integer-division pitfalls using `(1/3) * 3`.
-7. [Quotient and Remainder](01_Basics/02_Expressions/1_7_Output_and_remainder.cpp) - Reads two integers and prints the whole-number quotient and remainder.
-8. [Temperature Conversion](01_Basics/02_Expressions/1_8_Temperature_conversion.cpp) - Shows a Celsius-to-Fahrenheit conversion bug due to integer division and correction.
+- [Cpp vs Java](01_Basics/02_Expressions/0.0_Cpp_vs_Java) - Explains differences between Java and C\+\+ handling of `char`/`byte` and Unicode.
+- [Greetings](01_Basics/02_Expressions/0.1_Greetings) - Greeting program that asks how many languages the user used and responds.
+- [Deposit](01_Basics/02_Expressions/0.2_Deposit) - Reads a deposit amount and computes the balance after one year with a fixed interest rate.
+1. [Declarations](01_Basics/02_Expressions/01_Declaration_Int) - Shows two ways to declare and initialize `feet` and `inches` variables.
+2. [Declarations double](01_Basics/02_Expressions/02_Declaration_Double) - Shows two ways to declare and initialize `count` (int) and `distance` (double).
+3. [Uninitialized Variables](01_Basics/02_Expressions/03_Undefined_Behaviour_Undefined_Var) - Demonstrates undefined/garbage values from uninitialized local variables and behavior.
+4. [Expressions Examples](01_Basics/02_Expressions/04_Expressions) - Converts simple mathematical formulas into C\+\+ expressions with user input.
+5. [Output Characters](01_Basics/02_Expressions/05_Output) - Shows character assignments and outputs the resulting character sequence.
+6. [Integer Division](01_Basics/02_Expressions/06_Output) - Demonstrates integer-division pitfalls using `(1/3) * 3`.
+7. [Quotient and Remainder](01_Basics/02_Expressions/07_Output_and_remainder) - Reads two integers and prints the whole-number quotient and remainder.
+8. [Temperature Conversion](01_Basics/02_Expressions/08_Temperature_conversion) - Shows a Celsius-to-Fahrenheit conversion bug due to integer division and correction.
 
 ### Ch.1 Section 3 Console In and Console Out
 
