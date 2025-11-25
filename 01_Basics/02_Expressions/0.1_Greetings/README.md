@@ -1,1 +1,0 @@
-Programs that greets the user.

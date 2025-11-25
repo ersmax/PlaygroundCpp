@@ -1,3 +1,8 @@
+/*
+Write a program that contains statements that output the values of five or
+six variables that have been defined, but not initialized. Compile and run the
+program. What is the output? Explain.
+*/
 #include <iostream>
 using namespace std;
 

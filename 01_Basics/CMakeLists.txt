@@ -1,25 +1,31 @@
 ﻿# CMakeList.txt : CMake project, include source and define
 # project specific logic here.
+#
 
 # Add source to this project's executable.
-# add_executable (Cpp_vs_Java "02_Expressions/1_0_0_Cpp_vs_Java.cpp")
+# add_executable ()
 
-# Find all .cpp files recursively inside this chapter folder
-file(GLOB_RECURSE CHAPTER_SOURCES CONFIGURE_DEPENDS
-    "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp"
+# List all folders
+set(FOLDERS
+    "02_Expressions"
+    "03_Console_In_Out"    
 )
 
-foreach(src ${CHAPTER_SOURCES})
-    # Build unique target name based on folder structure
-    file(RELATIVE_PATH rel ${CMAKE_SOURCE_DIR} ${src})
+# Automatically get all .cpp and headers files 
+foreach(folder ${FOLDERS})
+    # Gather .cpp and .h files
+    file(GLOB SOURCES CONFIGURE_DEPENDS "${folder}/*.cpp")
+    file(GLOB HEADERS CONFIGURE_DEPENDS "${folder}/*.h")
 
-    # Replace / with __ so name is valid
-    string(REPLACE "/" "__" target_name ${rel})
-    string(REPLACE "\\" "__" target_name ${target_name})
-    string(REPLACE ".cpp" "" target_name ${target_name})
+    foreach(source ${SOURCES})
+        # Executable name = filename without extension
+        get_filename_component(exec_name ${source} NAME_WE)
 
-    add_executable(${target_name} ${src})
+        # Create target
+        add_executable(${exec_name} ${source} ${HEADERS})
+    endforeach()
 endforeach()
+
 
 
 # TODO: Add tests and install targets if needed.
