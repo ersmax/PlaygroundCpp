@@ -6,6 +6,9 @@ For project-oriented programs, see the other repo [Programming Projects CPP](htt
 Feel free to explore each file for code examples and explanations.
 Bullet list elements illustrate examples, while numbered list elements indicate small exercises.
 
+## Important notes
+Setup: Visual Studio 2026 with C++20 or later standard, CMake 3.25 or higher.
+
 ---
 
 ## Chapter 1 
