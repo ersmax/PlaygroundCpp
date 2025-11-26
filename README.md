@@ -234,3 +234,19 @@ Setup: Visual Studio 2026 with C++20 or later standard, CMake 3.25 or higher.
 21. [Fill In Array](05_Arrays/04_Multidimensional_Arrays/5_21_Fill_In_Array.cpp) \- Reads a 4x5 integer array from input (five numbers per line over four lines) and prints the values.
 22. [Echo Multidimensional Array](05_Arrays/04_Multidimensional_Arrays/5_22_Display_Multidimensional_Array.cpp) \- Implements `echo` to print a 4x5 integer array in the same four-lines-of-five-numbers format.
 
+---
+
+## Chapter 6
+
+### Ch.6 Section 1 Structures
+
+- [Certificate Deposit](06_Structures_Classes/01_Structures/6_0_1_Certificate_Deposit.cpp) - Demonstrates struct-based CD account calculation and helper functions.
+- [Certificate Deposit with Dates](06_Structures_Classes/01_Structures/6_0_2_Certificate_Deposit_Dates.cpp) - Hierarchical structs example: `CDAccount` contains a `Date` member.
+1. [Structure Member types](06_Structures_Classes/01_Structures/6_1_Structure_Member_Types.cpp) - Defines `ShoeType` struct with `brand`, `style`, `size`, and `price` members.
+2. [Shoe price](06_Structures_Classes/01_Structures/6_2_Shoe_price.cpp) - Demonstrates `ShoeType` assignment and price update; prints original and adjusted price.
+3. [Pitfall: Struct Definition](06_Structures_Classes/01_Structures/6_3_Pitfall_Struct_Definition.cpp) - Shows missing semicolon after a struct definition (syntax pitfall).
+4. [Struct Initialization](06_Structures_Classes/01_Structures/6_4_Struct_Initialization.cpp) - Aggregate initialization example (`A x = {1, 2}`).
+5. [Pitfall: Struct Initialization](06_Structures_Classes/01_Structures/6_5_Pitfall_Struct_Initialization.cpp) - Demonstrates partial initialization defaulting to zero and error for too many initializers.
+6. [Employee Record](06_Structures_Classes/01_Structures/6_6_Employee_Record.cpp) - Defines `EmployeeRecord` with `rate`, `accruedVacation`, and `status` (`'H'`/`'S'`).
+7. [Shoes Recording](06_Structures_Classes/01_Structures/6_7_Shoes_Recording.cpp) - Implements `readShoeRecord` to populate a `ShoeType` from input.
+8. [Shoe Discount](06_Structures_Classes/01_Structures/6_8_Shoe_Discount.cpp) - `discount` returns a discounted `ShoeType`; includes `showOffer` to display values.
