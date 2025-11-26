@@ -22,7 +22,7 @@ foreach(folder ${FOLDERS})
         get_filename_component(exec_name ${source} NAME_WE)
 
         # Create target
-        add_executable(${exec_name} ${source} ${HEADERS} "01_Structures/6_0_2_Certificate_Deposit_Dates.cpp")
+        add_executable(${exec_name} ${source} ${HEADERS})
     endforeach()
 endforeach()
 
