@@ -8,6 +8,7 @@
 # List all folders
 set(FOLDERS
     "01_Structures"
+    "02_Classes"
     
 )
 
