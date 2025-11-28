@@ -84,5 +84,5 @@ void DayOfYear::output() const
 		std::cout << "Error in DayOfYear::output";
 		break;
 	}
-	std::cout << " " << day;
+	std::cout << " " << day << "\n";
 }
