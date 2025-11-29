@@ -250,3 +250,20 @@ Setup: Visual Studio 2026 with C++20 or later standard, CMake 3.25 or higher.
 6. [Employee Record](06_Structures_Classes/01_Structures/6_6_Employee_Record.cpp) - Defines `EmployeeRecord` with `rate`, `accruedVacation`, and `status` (`'H'`/`'S'`).
 7. [Shoes Recording](06_Structures_Classes/01_Structures/6_7_Shoes_Recording.cpp) - Implements `readShoeRecord` to populate a `ShoeType` from input.
 8. [Shoe Discount](06_Structures_Classes/01_Structures/6_8_Shoe_Discount.cpp) - `discount` returns a discounted `ShoeType`; includes `showOffer` to display values.
+
+### Ch.6 Section 2 Classes
+- [Class Birthday](06_Structures_Classes/02_Classes/6_0_3_Class_Birthday.cpp) - Simple class example `DayOfYear` showing public data members and a member function `output()` to display the date.
+- [Encapsulation Birthday](06_Structures_Classes/02_Classes/6_0_4_Encapsulation_Birthday.cpp) - Encapsulation demo: `DayOfYear` with private data, public setters/getters, input validation, and `input()`/`output()` methods.
+- [Test Encapsulation](06_Structures_Classes/02_Classes/6_0_5_Test_Encapsulation.cpp) - Variant of encapsulation example that stores the first three letters of the month as private characters and verifies proper encapsulation.
+9. [Input Member Function](06_Structures_Classes/02_Classes/6_9_Input_Member_Function.cpp) - Adds and implements `input()` for `DayOfYear`, demonstrating member function definitions and usage.
+10. [Set Temperature](06_Structures_Classes/02_Classes/6_10_Set_Temperature.cpp) - `Temperature` class with a `set()` member that assigns temperature value and scale, illustrating simple mutators.
+11. [Scope Dot Operator](06_Structures_Classes/02_Classes/6_11_Scope_Dot_Operators.cpp) - Explanation of the difference between the dot operator (`.`) for object access and the scope resolution operator (`::`) for member definitions.
+12. [Pitfalls Encapsulation](06_Structures_Classes/02_Classes/6_12_Pitfalls_Encapsulation.cpp) - Shows visibility rules: which members are part of the interface versus implementation and examples of allowed/disallowed accesses.
+13. [Pitfalls Public members](06_Structures_Classes/02_Classes/6_13_Pitfalls_Public_members.cpp) - Demonstrates effects of making member variables public versus private and the resulting changes to allowed operations.
+14. [Access Specifiers Private Public](06_Structures_Classes/02_Classes/6_14_Access_Specifiers_Public_Private.cpp) - Short explanation of `public:` and `private:` access specifiers and their formal meanings.
+15. [Required public private sections](06_Structures_Classes/02_Classes/6_15_Required_Public_Private_Sections.cpp) - Self-test discussion on how many `public:` and `private:` sections a class needs and best practices.
+16. [Private public members](06_Structures_Classes/02_Classes/6_16_Private_Public_Members.cpp) - Guidance on which members should be `private` (data) and which should be `public` (interface), with rationale.
+17. [Interface API](06_Structures_Classes/02_Classes/6_17_Interface_API.cpp) - Conceptual note: what forms the public interface of a class versus implementation details (private members and definitions).
+
+
+
