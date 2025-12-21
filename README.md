@@ -265,5 +265,13 @@ Setup: Visual Studio 2026 with C++20 or later standard, CMake 3.25 or higher.
 16. [Private public members](06_Structures_Classes/02_Classes/6_16_Private_Public_Members.cpp) - Guidance on which members should be `private` (data) and which should be `public` (interface), with rationale.
 17. [Interface API](06_Structures_Classes/02_Classes/6_17_Interface_API.cpp) - Conceptual note: what forms the public interface of a class versus implementation details (private members and definitions).
 
+---
 
+## Chapter 7
+
+### Ch.7 Section 1 Constructors
+
+### Ch.7 Section 2 More Tools
+
+### Ch.7 Section 3 Vectors - A preview of the STL
 
