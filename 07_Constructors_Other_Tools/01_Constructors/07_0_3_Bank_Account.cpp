@@ -1,5 +1,6 @@
 //  This program describes the use of constructors in a bank account 
-// that computes interest and keep track of the amount
+// that computes interest and keep track of the amount with separate
+// variables for dollars and cents.
 
 #include <iostream>
 #include <cstdlib>
@@ -42,6 +43,8 @@ public:
 	// the new rate. Else, abort the program.
 
 private:
+	//   A negative amount (such as -$ 9.83) is represented as
+	// negative dollars (-9) and negative cents (-83).
 	int accountDollars;
 	int accountCents;
 	double rate;	// as percent
