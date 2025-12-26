@@ -63,6 +63,8 @@ private:
 	int centsPart(double amount);
 	int round(double number);
 	double fraction(double percent);
+	//   Postcondition: convert a percent to a fraction.
+	// For instance, fraction(50.3) returns 0.503
 	int digitToInt(char digit);
 	//   Postcondition: convert a percent to a fraction.
 	// For instance, fraction(50.3) returns 0.503
@@ -160,15 +162,26 @@ void BankAccount::setBalance(const int dollars, const int cents)
 
 void BankAccount::input()
 {
+	char firstChar;
 	int dollars;
 	char point, digit1, digit2;
+	bool isNegative = false;
+	
 	std::cout << "Enter account balance: $";
+	std::cin >> firstChar;
+
+	if (firstChar == '-')	isNegative = true;
+	else 					std::cin.putback(firstChar);
+	
 	std::cin >> dollars >> point >> digit1 >> digit2;
 	accountDollars = dollars;
 	accountCents = digitToInt(digit1) * 10 + digitToInt(digit2);
-
-	if (accountDollars < 0)
+	
+	if (isNegative)
+	{
+		accountDollars = -std::abs(accountDollars);
 		accountCents = -accountCents;
+	}
 
 	std::cout << "Enter interest rate (No percent sign): ";
 	std::cin >> rate;
