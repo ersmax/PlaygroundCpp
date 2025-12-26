@@ -41,7 +41,9 @@ public:
 	void setRate(double newRate);
 	//   Postcondition: if newRate is nonnegative, it becomes
 	// the new rate. Else, abort the program.
-
+	int digitToInt(char digit);
+	//   Precondition: digit is a valid char
+	//   Postcondition: return the digit value of `digit`
 private:
 	//   A negative amount (such as -$ 9.83) is represented as
 	// negative dollars (-9) and negative cents (-83).
