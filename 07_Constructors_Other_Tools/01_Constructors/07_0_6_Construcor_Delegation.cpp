@@ -1,3 +1,6 @@
+//   This program shows constructor delegation, which allows a constructor 
+// to call another constructor.
+
 #include <iostream>
 
 class Coordinate
@@ -13,24 +16,28 @@ private:
 	int y = 2;
 };
 
-int main( )
+int main()
 {
-	Coordinate grid1(0);
+	Coordinate grid1;
 	std::cout << "grid1 x: " << grid1.getX() << '\n'
-			  << "grid1 y: " << grid1.getY();
+		<< "grid1 y: " << grid1.getY();
 	std::cout << '\n';
 	return 0;
 }
 
-Coordinate::Coordinate()
-{}
+//  Constructor delegation
+Coordinate::Coordinate() : Coordinate(99, 99)
+{
+}
 
 Coordinate::Coordinate(const int xVal) : x(xVal)
-{}
+{
+}
 
-Coordinate::Coordinate(const int xVal, const int yVal) 
-					   : x(xVal), y(yVal)
-{}
+Coordinate::Coordinate(const int xVal, const int yVal)
+	: x(xVal), y(yVal)
+{
+}
 
 int Coordinate::getX() const
 {
