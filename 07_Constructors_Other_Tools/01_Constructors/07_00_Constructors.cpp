@@ -20,7 +20,8 @@ private:
 };
 
 DayOfYear::DayOfYear() : month(1), day(1)
-{}
+{
+}
 
 DayOfYear::DayOfYear(const int monthValue)
 {
@@ -29,7 +30,7 @@ DayOfYear::DayOfYear(const int monthValue)
 }
 
 DayOfYear::DayOfYear(const int monthValue, const int dayValue)
-					: month(monthValue), day(dayValue)
+	: month(monthValue), day(dayValue)
 {
 	if ((month < 1) || (month > 12))
 	{
@@ -60,7 +61,7 @@ int DayOfYear::getDay() const
 	return day;
 }
 
-int main( )
+int main()
 {
 	// DayOfYear date1, date2;		// PROBLEMS
 	// date1.DayOfYear(7, 4);		// ILLEGAL
