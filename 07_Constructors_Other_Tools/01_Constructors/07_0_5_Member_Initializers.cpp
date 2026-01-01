@@ -19,9 +19,15 @@ private:
 
 int main( )
 {
-	Coordinate grid1(0);
+	// grid1: x is overriden to 0, y uses the member initializer value of 2
+	const Coordinate grid1(0);
+	// grid2: x uses the member initializer value of 1, y uses the member initializer value of 2
+	const Coordinate grid2; 
 	std::cout << "grid1 x: " << grid1.getX() << '\n'
-			  << "grid1 y: " << grid1.getY();
+			  << "grid1 y: " << grid1.getY() << '\n';
+	std::cout << '\n';
+	std::cout << "grid2 x: " << grid2.getX() << '\n'
+			  << "grid2 y: " << grid2.getY() << '\n';
 	std::cout << '\n';
 	return 0;
 }
