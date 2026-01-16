@@ -270,6 +270,20 @@ Setup: Visual Studio 2026 with C++20 or later standard, CMake 3.25 or higher.
 ## Chapter 7
 
 ### Ch.7 Section 1 Constructors
+- [Constructors](07_Constructors_Other_Tools/01_Constructors/07_00_Constructors.cpp) - Basic `DayOfYear` class demonstrating multiple constructors with different parameter counts and member initializer lists.
+- [Date Constructors](07_Constructors_Other_Tools/01_Constructors/07_0_1_Date_Constructors.cpp) - Shows constructor usage to initialize objects and explicit constructor calls for assignment with validation.
+- [Pitfall: No Default Constructor](07_Constructors_Other_Tools/01_Constructors/07_0_2_Pitfall_No_Default_Constructor.cpp) - Demonstrates that defining parameterized constructors prevents automatic default constructor generation.
+- [Bank Account](07_Constructors_Other_Tools/01_Constructors/07_0_3_Bank_Account.cpp) - `BankAccount` class with overloaded constructors handling balance (dollars/cents) and interest rate in various forms.
+- [Holiday](07_Constructors_Other_Tools/01_Constructors/07_0_4_Holiday.cpp) - Illustrates using class-type member variables: `Holiday` class contains a `DayOfYear` member initialized via constructor.
+- [Member Initializers](07_Constructors_Other_Tools/01_Constructors/07_0_5_Member_Initializers.cpp) - Demonstrates C++11 member initialization syntax to set default values for member variables directly in the class definition.
+- [Constructor Delegation](07_Constructors_Other_Tools/01_Constructors/07_0_6_Construcor_Delegation.cpp) - Shows constructor delegation where one constructor calls another constructor to avoid code duplication.
+1. [Constructor Mistakes](07_Constructors_Other_Tools/01_Constructors/07_1_Constructors_Mistakes.cpp) - Explores legal and illegal constructor syntax including the "most vexing parse" pitfall (`YourClass yetAnotherObject()`).
+2. [Default Constructor](07_Constructors_Other_Tools/01_Constructors/07_2_Default_Constructor.cpp) - Explains what a default constructor is and when it is automatically provided versus when it must be explicitly defined.
+3. [Bank Account Input](07_Constructors_Other_Tools/01_Constructors/07_3_Bank_Account_Input.cpp) - Rewrites `BankAccount::input` to read balance as separate int/char values (dollars, decimal point, cents digits) to avoid floating-point precision errors.
+
+### Ch.7 Section 2 More Tools
+
+4. [Const Modifier Input](07_Constructors_Other_Tools/02_Const_Parameter_modifier/07_4_const_modifier_Input.cpp) - Explains why adding `const` to a mutating function is erraneous.
 
 ### Ch.7 Section 2 More Tools
 
