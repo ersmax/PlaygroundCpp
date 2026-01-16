@@ -6,6 +6,8 @@
 #include <cstdlib>
 #include <cmath>
 
+//  Data consists of two items: an amount of money for the account balance
+// and a percentage for the interest rate.
 class BankAccount
 {
 public:
@@ -47,7 +49,7 @@ public:
 	bool isLarger(const BankAccount& account1, const BankAccount& account2);
 	//   Precondition: account1 and account2 are two valid accounts
 	//   Postcondition: return true if account1 balance is greater than account2 balance
-	void welcome(const BankAccount& yourAccount);
+	void welcome(const BankAccount& yourAccount) const;
 	//   Precondition: yourAccount is a valid account
 	//   Postcondition: show the status of yourAccount
 private:
@@ -56,10 +58,10 @@ private:
 	int accountDollars;
 	int accountCents;
 	double rate;	// as percent
-	int dollarsPart(double amount);
-	int centsPart(double amount);
-	int round(double number);
-	double fraction(double percent);
+	int dollarsPart(double amount) const;
+	int centsPart(double amount) const;
+	int round(double number) const;
+	double fraction(double percent) const;
 	//   Postcondition: convert a percent to a fraction.
 	// For instance, fraction(50.3) returns 0.503
 };
@@ -122,12 +124,12 @@ bool BankAccount::isLarger(const BankAccount& account1, const BankAccount& accou
 	return (account1.getBalance() > account2.getBalance());
 }
 
-int BankAccount::dollarsPart(const double amount)
+int BankAccount::dollarsPart(const double amount) const
 {
 	return static_cast<int>(amount);
 }
 
-int BankAccount::centsPart(const double amount)
+int BankAccount::centsPart(const double amount) const
 {
 	const double doubleCents = amount * 100;
 	int intCents = static_cast<int>(std::round(std::fabs(doubleCents))) % 100;
@@ -191,7 +193,7 @@ void BankAccount::output() const
 	std::cout << "Rate: " << rate << "%\n";
 }
 
-void BankAccount::welcome(const BankAccount& yourAccount)
+void BankAccount::welcome(const BankAccount& yourAccount) const
 {
 	std::cout << "Welcome to our bank.\n"
 			  << "The status of your account is: ";
@@ -207,12 +209,12 @@ void BankAccount::update()
 	accountCents = centsPart(balance);
 }
 
-double BankAccount::fraction(const double percent)
+double BankAccount::fraction(const double percent) const
 {
 	return (percent / 100.0);
 }
 
-int BankAccount::round(const double number)
+int BankAccount::round(const double number) const
 {
 	return static_cast<int>(std::floor(number + 0.5));
 }
