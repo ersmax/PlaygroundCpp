@@ -27,7 +27,7 @@ public:
 	void update();
 	//   Postcondition: Add one year of simple interest rate
 	void input();
-	void output();
+	void output() const;
 	double getBalance() const;
 	int getDollars() const;
 	int getCents() const;
@@ -47,6 +47,9 @@ public:
 	bool isLarger(const BankAccount& account1, const BankAccount& account2);
 	//   Precondition: account1 and account2 are two valid accounts
 	//   Postcondition: return true if account1 balance is greater than account2 balance
+	void welcome(const BankAccount& yourAccount);
+	//   Precondition: yourAccount is a valid account
+	//   Postcondition: show the status of yourAccount
 private:
 	//   A negative amount (such as -$ 9.83) is represented as
 	// negative dollars (-9) and negative cents (-83).
@@ -172,7 +175,7 @@ void BankAccount::input()
 	setRate(rate);
 }
 
-void BankAccount::output()
+void BankAccount::output() const
 {
 	int absDollars = std::abs(accountDollars);
 	int absCents = std::abs(accountCents);
@@ -186,6 +189,14 @@ void BankAccount::output()
 	else
 		std::cout << ".0" << absCents << "\n";
 	std::cout << "Rate: " << rate << "%\n";
+}
+
+void BankAccount::welcome(const BankAccount& yourAccount)
+{
+	std::cout << "Welcome to our bank.\n"
+			  << "The status of your account is: ";
+	yourAccount.output();
+	std::cout << "\n";
 }
 
 void BankAccount::update()
