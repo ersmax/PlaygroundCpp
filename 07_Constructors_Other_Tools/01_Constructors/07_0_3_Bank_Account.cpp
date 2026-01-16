@@ -44,6 +44,9 @@ public:
 	int digitToInt(char digit);
 	//   Precondition: digit is a valid char
 	//   Postcondition: return the digit value of `digit`
+	bool isLarger(const BankAccount& account1, const BankAccount& account2);
+	//   Precondition: account1 and account2 are two valid accounts
+	//   Postcondition: return true if account1 balance is greater than account2 balance
 private:
 	//   A negative amount (such as -$ 9.83) is represented as
 	// negative dollars (-9) and negative cents (-83).
@@ -79,6 +82,11 @@ int main( )
 	std::cout << "In one year, account2 will grow to:\n";
 	account2.output();
 
+	if (account1.isLarger(account1, account2))
+		std::cout << "account1 has greater balance\n";
+	else
+		std::cout << "account2 has greater balance\n";
+
 	std::cout << "\n";
 	return 0;
 }
@@ -105,6 +113,11 @@ BankAccount::BankAccount(const int dollars, const double rate)
 BankAccount::BankAccount() : accountDollars(0), accountCents(0), rate(0.0)
 { /* Body intentionally empty */ }
 
+
+bool BankAccount::isLarger(const BankAccount& account1, const BankAccount& account2)
+{
+	return (account1.getBalance() > account2.getBalance());
+}
 
 int BankAccount::dollarsPart(const double amount)
 {
