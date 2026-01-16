@@ -8,6 +8,7 @@
 # List all folders
 set(FOLDERS
     "01_Constructors"
+    "02_Const_Parameter_modifier"
     
 )
 

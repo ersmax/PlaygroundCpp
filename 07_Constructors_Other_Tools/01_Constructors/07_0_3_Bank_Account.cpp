@@ -46,12 +46,6 @@ public:
 	int digitToInt(char digit);
 	//   Precondition: digit is a valid char
 	//   Postcondition: return the digit value of `digit`
-	bool isLarger(const BankAccount& account1, const BankAccount& account2);
-	//   Precondition: account1 and account2 are two valid accounts
-	//   Postcondition: return true if account1 balance is greater than account2 balance
-	void welcome(const BankAccount& yourAccount) const;
-	//   Precondition: yourAccount is a valid account
-	//   Postcondition: show the status of yourAccount
 private:
 	//   A negative amount (such as -$ 9.83) is represented as
 	// negative dollars (-9) and negative cents (-83).
@@ -65,6 +59,13 @@ private:
 	//   Postcondition: convert a percent to a fraction.
 	// For instance, fraction(50.3) returns 0.503
 };
+
+bool isLarger(const BankAccount& account1, const BankAccount& account2);
+//   Precondition: account1 and account2 are two valid accounts
+//   Postcondition: return true if account1 balance is greater than account2 balance
+void welcome(const BankAccount& yourAccount);
+//   Precondition: yourAccount is a valid account
+//   Postcondition: show the status of yourAccount
 
 int main( )
 {
@@ -87,13 +88,26 @@ int main( )
 	std::cout << "In one year, account2 will grow to:\n";
 	account2.output();
 
-	if (account1.isLarger(account1, account2))
+	if (isLarger(account1, account2))
 		std::cout << "account1 has greater balance\n";
 	else
 		std::cout << "account2 has greater balance\n";
 
 	std::cout << "\n";
 	return 0;
+}
+
+bool isLarger(const BankAccount& account1, const BankAccount& account2)
+{
+	return (account1.getBalance() > account2.getBalance());
+}
+
+void welcome(const BankAccount& yourAccount)
+{
+	std::cout << "Welcome to our bank.\n"
+		<< "The status of your account is: ";
+	yourAccount.output();
+	std::cout << "\n";
 }
 
 BankAccount::BankAccount(const double balance, const double rate) 
@@ -117,12 +131,6 @@ BankAccount::BankAccount(const int dollars, const double rate)
 
 BankAccount::BankAccount() : accountDollars(0), accountCents(0), rate(0.0)
 { /* Body intentionally empty */ }
-
-
-bool BankAccount::isLarger(const BankAccount& account1, const BankAccount& account2)
-{
-	return (account1.getBalance() > account2.getBalance());
-}
 
 int BankAccount::dollarsPart(const double amount) const
 {
@@ -191,14 +199,6 @@ void BankAccount::output() const
 	else
 		std::cout << ".0" << absCents << "\n";
 	std::cout << "Rate: " << rate << "%\n";
-}
-
-void BankAccount::welcome(const BankAccount& yourAccount) const
-{
-	std::cout << "Welcome to our bank.\n"
-			  << "The status of your account is: ";
-	yourAccount.output();
-	std::cout << "\n";
 }
 
 void BankAccount::update()
