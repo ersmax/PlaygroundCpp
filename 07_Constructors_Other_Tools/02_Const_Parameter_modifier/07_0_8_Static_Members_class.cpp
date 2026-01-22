@@ -8,7 +8,7 @@ class Server
 public:
 	Server(char letterName);
 	static int getTurn();
-	void serveOne() const;
+	void serveOne(int groupN) const;
 	static bool stillOpen();
 private:
 	static int turn;
@@ -34,8 +34,8 @@ int main()
 		for (int count = 0; count < number; count++)
 			std::cout << Server::getTurn() << ' ';
 		std::cout << '\n';
-		s1.serveOne();
-		s2.serveOne();
+		s1.serveOne(number);
+		s2.serveOne(number);
 	} while (Server::stillOpen());
 
 	std::cout << "Now closing service\n";
@@ -57,7 +57,7 @@ bool Server::stillOpen()
 	return nowOpen;
 }
 
-void Server::serveOne() const
+void Server::serveOne(const int groupN) const
 {
 	if (nowOpen && lastServed < turn)
 	{
@@ -65,6 +65,6 @@ void Server::serveOne() const
 		std::cout << "Server " << name
 			<< " now serving " << lastServed << '\n';
 	}
-	if (lastServed >= turn)		// everyone is served
+	if (lastServed >= turn && groupN == 0)	// everyone is served
 		nowOpen = false;
 }
