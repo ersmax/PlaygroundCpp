@@ -1,7 +1,8 @@
 // This program showcases the usage of static member variables and functions
 #include <iostream>
 
-// Class representing a server that serves customers in turn
+//   Class representing a server that serves customers in turn
+// Static members are used to keep track of the overall state across all instances  
 class Server
 {
 public:
