@@ -23,7 +23,8 @@ bool Server::nowOpen = true;
 
 int main()
 {
-	Server s1('A'), s2('B');
+	const Server s1('A');
+	const Server s2('B');
 	int number;
 	do
 	{
@@ -43,8 +44,7 @@ int main()
 }
 
 Server::Server(const char letterName) : name(letterName)
-{ /* Intentionally left empty */
-}
+{ /* Intentionally left empty */ }
 
 int Server::getTurn()
 {
