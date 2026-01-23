@@ -9,7 +9,7 @@
 set(FOLDERS
     "01_Constructors"
     "02_Const_Parameter_modifier"
-    
+    "03_Vectors"
 )
 
 # Automatically get all .cpp and headers files 
