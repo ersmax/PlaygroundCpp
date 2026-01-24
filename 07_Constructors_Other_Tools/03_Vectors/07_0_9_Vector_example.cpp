@@ -1,4 +1,4 @@
-// This program showcases the use of `vector` template in the STL
+// This program showcases the use of `vector` template in the STL library.
 
 #include <iostream>
 #include <vector>
