@@ -283,9 +283,27 @@ Setup: Visual Studio 2026 with C++20 or later standard, CMake 3.25 or higher.
 
 ### Ch.7 Section 2 More Tools
 
+- [Inline Functions](07_Constructors_Other_Tools/02_Const_Parameter_Static/07_0_7_Inline_functions.cpp) - `BankAccount` class demonstrating inline member functions for getters and helper functions (getBalance, getDollars, getCents, getRate, dollarsPart, round, fraction).
+- [Static Members Class](07_Constructors_Other_Tools/02_Const_Parameter_Static/07_0_8_Static_Members_class.cpp) - `Server` class showcasing static member variables (turn, lastServed, nowOpen) and static functions to track state across all instances.
 4. [Const Modifier Input](07_Constructors_Other_Tools/02_Const_Parameter_modifier/07_4_const_modifier_Input.cpp) - Explains why adding `const` to a mutating function is erraneous.
-
-### Ch.7 Section 2 More Tools
+5. [By Value By Reference](07_Constructors_Other_Tools/02_Const_Parameter_Static/07_5_By_value_by_reference.cpp) - Discusses differences and similarities between call-by-value parameters and const call-by-reference parameters.
+6. [Const Param Function Modifier](07_Constructors_Other_Tools/02_Const_Parameter_Static/07_6_Const_param_function_modifier.cpp) - Explains the promise made by `const` keyword in three contexts: const variables, const member functions, and const reference parameters.
+7. [Inline Day](07_Constructors_Other_Tools/02_Const_Parameter_Static/07_7_Inline_Day.cpp) - Rewrites `DayOfYear` class with inline definitions for `getMonthNumber()` and `getDay()` accessor functions.
+8. [Static Function](07_Constructors_Other_Tools/02_Const_Parameter_Static/07_8_Static_function.cpp) - Explores whether a function referencing instance variables can be added as a static member function to the `Server` class.
 
 ### Ch.7 Section 3 Vectors - A preview of the STL
+
+- [Vector Example](07_Constructors_Other_Tools/03_Vectors/07_0_9_Vector_example.cpp) - Demonstrates basic `std::vector` usage with `push_back()`, `size()`, and indexed access to dynamically store positive integers.
+9. [Vector Output](07_Constructors_Other_Tools/03_Vectors/07_9_Vector_output.cpp) - Shows vector assignment and copying behavior; demonstrates that `copy = v` creates an independent copy where changes to `v` don't affect `copy`.
+10. [Vector Capacity Size](07_Constructors_Other_Tools/03_Vectors/07_10_Vector_capacity_size.cpp) - Explains the difference between `size()` (number of elements) and `capacity()` (memory allocated for potential elements) of a vector.
+	
+---
+
+## Chapter 8
+
+### Ch.8 Section 1 Basic operator overloading
+
+### Ch.8 Section 2 Friend functions and automatic type conversion
+
+### Ch.8 Section 3 References and more overloaded operators
 
