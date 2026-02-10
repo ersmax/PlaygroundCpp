@@ -285,7 +285,7 @@ Setup: Visual Studio 2026 with C++20 or later standard, CMake 3.25 or higher.
 
 - [Inline Functions](07_Constructors_Other_Tools/02_Const_Parameter_Static/07_0_7_Inline_functions.cpp) - `BankAccount` class demonstrating inline member functions for getters and helper functions (getBalance, getDollars, getCents, getRate, dollarsPart, round, fraction).
 - [Static Members Class](07_Constructors_Other_Tools/02_Const_Parameter_Static/07_0_8_Static_Members_class.cpp) - `Server` class showcasing static member variables (turn, lastServed, nowOpen) and static functions to track state across all instances.
-4. [Const Modifier Input](07_Constructors_Other_Tools/02_Const_Parameter_modifier/07_4_const_modifier_Input.cpp) - Explains why adding `const` to a mutating function is erraneous.
+4. [Const Modifier Input](07_Constructors_Other_Tools/02_Const_Parameter_Static/07_4_const_modifier_Input.cpp) - Explains why adding `const` to a mutating function is erraneous.
 5. [By Value By Reference](07_Constructors_Other_Tools/02_Const_Parameter_Static/07_5_By_value_by_reference.cpp) - Discusses differences and similarities between call-by-value parameters and const call-by-reference parameters.
 6. [Const Param Function Modifier](07_Constructors_Other_Tools/02_Const_Parameter_Static/07_6_Const_param_function_modifier.cpp) - Explains the promise made by `const` keyword in three contexts: const variables, const member functions, and const reference parameters.
 7. [Inline Day](07_Constructors_Other_Tools/02_Const_Parameter_Static/07_7_Inline_Day.cpp) - Rewrites `DayOfYear` class with inline definitions for `getMonthNumber()` and `getDay()` accessor functions.
