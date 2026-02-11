@@ -1,4 +1,4 @@
-// This program showcases the overloading of + and == in member functions
+// This program showcases the overloading of +, - and == operator
 
 #include <iostream>
 #include <cstdlib>
@@ -23,17 +23,29 @@ private:
 	int dollars;
 	int cents;
 	int dollarsPart(double amount) const;
+	//   Postcondition: Returns the dollar part of amount.
+
 	int centsPart(double amount) const;
+	//   Postcondition: Returns the cents part of amount. 
+
 	int round(double number) const;
 };
 
-Money operator +(Money amount1, Money amount2);
+const Money operator +(const Money& amount1, const Money& amount2);
+//   Postcondition: Returns the sum of amount1 and amount2.
+// This is an overload of the binary + operator. The parameters are passed by reference to avoid copying.
 
-Money operator -(Money amount1, Money amount2);
+const Money operator -(const Money& amount1, const Money& amount2);
+//   Postcondition: Returns the difference of amount1 and amount2.
+// This is an overload of the binary - operator. The parameters are passed by reference to avoid copying.
 
-bool operator ==(Money amount1, Money amount2);
+bool operator ==(const Money& amount1, const Money& amount2);
+//   Postcondition: Returns true if amount1 and amount2 are equal, false otherwise.
+// This is an overload of the == operator. The parameters are passed by reference to avoid copying.
 
-Money operator -(Money amount);
+const Money operator -(const Money& amount);
+//   Postcondition: Returns the negative of amount.
+// This is an overload of the unary - operator. The parameter is passed by reference to avoid copying.
 
 int main( )
 {
@@ -61,6 +73,51 @@ int main( )
 	std::cout << " equals "; diffAmount.output(); std::cout << '\n';
 
 	return 0;
+}
+
+const Money operator +(const Money& amount1, const Money& amount2)
+{
+	int allCents1 = amount1.getCents() + amount1.getDollars() * 100;
+	int allCents2 = amount2.getCents() + amount2.getDollars() * 100;
+	int sumAllCents = allCents1 + allCents2;
+	int absAllCents = std::abs(sumAllCents);
+	int finalDollars = absAllCents / 100;
+	int finalCents = absAllCents % 100;
+
+	if (sumAllCents < 0)
+	{
+		finalDollars = -finalDollars;
+		finalCents = -finalCents;
+	}
+	return Money(finalDollars, finalCents);
+}
+
+const Money operator -(const Money& amount1, const Money& amount2)
+{
+	int allCents1 = amount1.getCents() + amount1.getDollars() * 100;
+	int allCents2 = amount2.getCents() + amount2.getDollars() * 100;
+	int diffAllCents = allCents1 - allCents2;
+	int absAllCents = std::abs(diffAllCents);
+	int finalDollars = absAllCents / 100;
+	int finalCents = absAllCents % 100;
+
+	if (diffAllCents < 0)
+	{
+		finalDollars = -finalDollars;
+		finalCents = -finalCents;
+	}
+	return Money(finalDollars, finalCents);
+}
+
+bool operator ==(const Money& amount1, const Money& amount2)
+{
+	return ((amount1.getDollars() == amount2.getDollars()) &&
+		(amount1.getCents() == amount2.getCents()));
+}
+
+const Money operator -(const Money& amount)
+{
+	return Money(-amount.getDollars(), -amount.getCents());
 }
 
 Money::Money() : dollars(0), cents(0)
