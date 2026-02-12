@@ -302,6 +302,10 @@ Setup: Visual Studio 2026 with C++20 or later standard, CMake 3.25 or higher.
 ## Chapter 8
 
 ### Ch.8 Section 1 Basic operator overloading
+- [Money overloading](08_Operator_Overloading_Friends_References/01_Basic_operator_overloading/08_0_1_Money_overloading.cpp) - Demonstrates overloading of binary +, -, unary -, and == operators as non-member functions for a Money class
+1. [Binary operator](08_Operator_Overloading_Friends_References/01_Basic_operator_overloading/08_1_Binary_operator.cpp) - Explains the difference between a binary operator and a function
+2. [Operator Less Than](08_Operator_Overloading_Friends_References/01_Basic_operator_overloading/08_2_Operator_Minus.cpp) - Overloads the `<` operator for the `Money` class by converting both amounts to total cents and comparing
+3. [Overloading Primitive Types](08_Operator_Overloading_Friends_References/01_Basic_operator_overloading/08_3_Overloading_Primitive_Types.cpp) - Explains why we cannot overload operators for primitive types like `int`
 
 ### Ch.8 Section 2 Friend functions and automatic type conversion
 
