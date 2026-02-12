@@ -49,7 +49,7 @@ const Money operator -(const Money& amount);
 
 int main( )
 {
-	Money yourAmount, myAmount(10, 9);
+	Money yourAmount, myAmount(-10, -9);
 	std::cout << "Enter an amount of money:\n";
 	yourAmount.input();
 	std::cout << "Your amount is: ";
