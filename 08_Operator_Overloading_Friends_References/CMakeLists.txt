@@ -8,6 +8,7 @@
 # List all folders
 set(FOLDERS
     "01_Basic_operator_overloading"
+    "02_Friend_functions_Automatic_type_conversion"
 )
 
 # Automatically get all .cpp and headers files 
