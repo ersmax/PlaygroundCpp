@@ -4,7 +4,7 @@
 // and need not use accessor and mutator function (get, set, etc.).
 
 //   The main difference between overloading operator and overloading operator as a member 
-// function is that operator defined inside a class need not using setters and getters 
+// function is that operator defined inside a class need not use setters and getters 
 // to access/change member variables, as opposed to overload operator outside the class.
 // This is because when we define an overloaded operator as a member function of a class, 
 // that function has access to the private members of ALL objects of that same class type, 
@@ -53,10 +53,6 @@ private:
 
 	int round(double number) const;
 };
-
-const Money operator -(const Money& amount);
-//   Postcondition: Returns the negative of amount.
-// This is an overload of the unary - operator. The parameter is passed by reference to avoid copying.
 
 int main()
 {
