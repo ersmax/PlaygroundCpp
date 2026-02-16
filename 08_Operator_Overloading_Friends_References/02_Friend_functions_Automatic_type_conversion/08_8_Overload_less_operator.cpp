@@ -1,0 +1,240 @@
+//   Suppose you wish to overload the operator < so that it applies to the type Money
+// defined in Display 8.3.What do you need to add to the definition of Money
+// given in Display 8.3 ?
+
+#include <iostream>
+#include <cstdlib>
+#include <cmath>
+
+class Money
+{
+public:
+	Money();
+	Money(double amount);
+	Money(int theDollars);
+	Money(int theDollars, int theCents);
+	double getAmount() const;
+	int getDollars() const;
+	int getCents() const;
+	void input();
+	//  Postcondition: Reads the dollar sign and the amount number
+	void output() const;
+
+	friend const Money operator +(const Money& firstOperand, const Money& secondOperand);
+	//   Postcondition: Returns the sum of calling object's and amount2's member values.
+	// This is an overload of the binary - operator. The parameter is passed by reference to avoid copying.
+
+	friend const Money operator -(const Money& firstOperand, const Money& secondOperand);
+	//   Postcondition: Returns the difference of calling object's and secondOperand's member values.
+
+	friend bool operator ==(const Money& firstOperand, const Money& secondOperand);
+	//   Postcondition: Returns true if calling object's and secondOperand's member values are equal, false otherwise.
+
+	friend const Money operator -(const Money& firstOperand);
+	//   Postcondition: Returns an object that has opposite sign of the calling object's member values.
+
+	friend bool operator <(const Money& firstOperand, const Money& secondOperand);
+	//   Postcondition: Returns whether firstOperand is less than secondOperand's member values
+
+private:
+	//  A negative amount is represented as negative dollars and 
+	// negative cents. -$4.50 is represented as -4 and -50.
+	int dollars;
+	int cents;
+	int dollarsPart(double amount) const;
+	//   Postcondition: Returns the dollar part of amount.
+
+	int centsPart(double amount) const;
+	//   Postcondition: Returns the cents part of amount. 
+
+	int round(double number) const;
+};
+
+int main()
+{
+	const Money baseAmount(100, 60);
+	// 24 is converted into object Money with dollars: 24, cents: 0
+	const Money fullAmount = baseAmount + 24.40;
+	fullAmount.output();
+	std::cout << '\n';
+
+	// The code below would now be fine, as opposed to the previous program
+	const Money fullAmount2 = 24.40 + baseAmount;
+	fullAmount2.output();
+	std::cout << '\n';
+
+	Money yourAmount, myAmount(-10, -9);
+	std::cout << "Enter an amount of money:\n";
+	yourAmount.input();
+	std::cout << "Your amount is: ";
+	yourAmount.output();
+	std::cout << '\n';
+	std::cout << "My amount is: ";
+	myAmount.output();
+	std::cout << '\n';
+
+	if (yourAmount == myAmount)
+		std::cout << "We have the same amounts\n";
+	else
+		std::cout << "One of us is richer\n";
+
+	Money ourAmount = yourAmount + myAmount;
+	yourAmount.output(); std::cout << " + "; myAmount.output();
+	std::cout << " equals "; ourAmount.output(); std::cout << '\n';
+
+	Money diffAmount = yourAmount - myAmount;
+	yourAmount.output(); std::cout << " - "; myAmount.output();
+	std::cout << " equals "; diffAmount.output(); std::cout << '\n';
+
+	std::cout << '\n';
+	return 0;
+}
+
+bool operator <(const Money& firstOperand, const Money& secondOperand)
+{
+	int totalAmount1 = firstOperand.cents + firstOperand.dollars * 100;
+	int totalAmount2 = secondOperand.cents + secondOperand.dollars * 100;
+	return (totalAmount1 < totalAmount2);
+}
+
+// or equivalently:
+/*
+bool operator <(const Money& firstOperand, const Money& secondOperand)
+{
+	return ((firstOperand.dollars < secondOperand.dollars) ||
+			((firstOperand.dollars == secondOperand.dollars) &&
+			 (firstOperand.cents < secondOperand.cents)));
+}
+*/
+
+const Money operator +(const Money& firstOperand, const Money& secondOperand)
+{
+	const int allCents1 = firstOperand.cents + firstOperand.dollars * 100;
+	const int allCents2 = secondOperand.cents + secondOperand.dollars * 100;
+	const int sumCents = allCents1 + allCents2;
+	const int absSumCents = std::abs(sumCents);
+	int totalDollars = absSumCents / 100;
+	int totalCents = absSumCents % 100;
+	if (sumCents < 0)
+	{
+		totalDollars = -totalDollars;
+		totalCents = -totalCents;
+	}
+	return Money(totalDollars, totalCents);
+}
+
+const Money operator -(const Money& firstOperand, const Money& secondOperand)
+{
+	const int allCents1 = firstOperand.cents + firstOperand.dollars * 100;
+	const int allCents2 = secondOperand.cents + secondOperand.dollars * 100;
+	const int allCents = allCents1 - allCents2;
+	int absAllCents = std::abs(allCents);
+	int totalDollar = allCents / 100;
+	int totalCents = allCents % 100;
+	if (allCents < 0)
+	{
+		totalDollar = -totalDollar;
+		totalCents = -totalCents;
+	}
+	return Money(totalDollar, totalCents);
+}
+
+bool operator ==(const Money& firstOperand, const Money& secondOperand)
+{
+	return ((firstOperand.cents == secondOperand.cents) &&
+		(firstOperand.dollars == secondOperand.dollars));
+}
+
+const Money operator -(const Money& firstOperand)
+{
+	return Money(-firstOperand.dollars, -firstOperand.cents);
+}
+
+Money::Money() : dollars(0), cents(0)
+{
+}
+
+Money::Money(double amount) : dollars(dollarsPart(amount)), cents(centsPart(amount))
+{
+}
+
+Money::Money(int theDollars) : dollars(theDollars), cents(0)
+{
+}
+
+Money::Money(int theDollars, int theCents)
+{
+	if ((theDollars > 0 && theCents < 0) ||
+		(theDollars < 0 && theCents > 0))
+	{
+		std::cout << "Inconsistent money data.\n";
+		std::exit(-1);
+	}
+	dollars = theDollars;
+	cents = theCents;
+}
+
+double Money::getAmount() const
+{
+	return (dollars + cents * 0.01);
+}
+
+int Money::getDollars() const
+{
+	return dollars;
+}
+
+int Money::getCents() const
+{
+	return cents;
+}
+
+void Money::output() const
+{
+	int absDollar = std::abs(dollars);
+	int absCents = std::abs(cents);
+	if (dollars < 0 || cents < 0)
+		std::cout << "-$ ";
+	else
+		std::cout << "$ ";
+
+	std::cout << absDollar;
+	if (absCents >= 10)
+		std::cout << '.' << absCents;
+	else
+		std::cout << ".0" << absCents;
+}
+
+void Money::input()
+{
+	char dollarSign;
+	std::cin >> dollarSign;
+	if (dollarSign != '$')
+	{
+		std::cout << "No dollar sign in Money input\n";
+		std::exit(-1);
+	}
+	double amountAsDouble;
+	std::cin >> amountAsDouble;
+	dollars = dollarsPart(amountAsDouble);
+	cents = centsPart(amountAsDouble);
+}
+
+int Money::dollarsPart(double amount) const
+{
+	return static_cast<int>(amount);
+}
+
+int Money::centsPart(double amount) const
+{
+	double doubleCents = amount * 100;
+	int intCents = round(std::fabs(doubleCents)) % 100;
+	if (amount < 0)
+		intCents = -intCents;
+	return intCents;
+}
+
+int Money::round(double number) const
+{
+	return static_cast<int>(std::floor(number + 0.5));
+}
