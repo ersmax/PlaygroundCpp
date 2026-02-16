@@ -302,12 +302,21 @@ Setup: Visual Studio 2026 with C++20 or later standard, CMake 3.25 or higher.
 ## Chapter 8
 
 ### Ch.8 Section 1 Basic operator overloading
-- [Money overloading](08_Operator_Overloading_Friends_References/01_Basic_operator_overloading/08_0_1_Operator_overloading.cpp) - Demonstrates overloading of binary +, -, unary -, and == operators as non-member functions for a Money class
-1. [Binary operator](08_Operator_Overloading_Friends_References/01_Basic_operator_overloading/08_1_Binary_operator.cpp) - Explains the difference between a binary operator and a function
-2. [Operator Less Than](08_Operator_Overloading_Friends_References/01_Basic_operator_overloading/08_2_Operator_Minus.cpp) - Overloads the `<` operator for the `Money` class by converting both amounts to total cents and comparing
-3. [Overloading Primitive Types](08_Operator_Overloading_Friends_References/01_Basic_operator_overloading/08_3_Overloading_Primitive_Types.cpp) - Explains why we cannot overload operators for primitive types like `int`
+- [Money overloading](08_Operator_Overloading_Friends_References/01_Basic_operator_overloading/08_0_1_Money_overloading.cpp) - Demonstrates overloading of binary +, -, unary -, and == operators as non-member functions for a Money class; uses const reference parameters to avoid copying.
+- [Overloading member functions](08_Operator_Overloading_Friends_References/01_Basic_operator_overloading/08_0_2_Overloading_member_functions.cpp) - Showcases operator overloading as member functions allowing direct access to private members of both the calling object and parameter objects without needing getters/setters.
+1. [Binary operator](08_Operator_Overloading_Friends_References/01_Basic_operator_overloading/08_1_Binary_operator.cpp) - Explains the difference between a binary operator and a function: operators use infix notation (arguments before/after), functions use parentheses; both require the `operator` keyword in declarations.
+2. [Operator Less Than](08_Operator_Overloading_Friends_References/01_Basic_operator_overloading/08_2_Operator_Minus.cpp) - Overloads the `<` operator for the `Money` class by converting both amounts to total cents and comparing; includes an alternative implementation comparing dollars and cents separately.
+3. [Overloading Primitive Types](08_Operator_Overloading_Friends_References/01_Basic_operator_overloading/08_3_Overloading_Primitive_Types.cpp) - Explains why you cannot overload operators for primitive types like `int`: at least one operand must be a class type to prevent changing built-in operator behavior.
+4. [By const value](08_Operator_Overloading_Friends_References/01_Basic_operator_overloading/08_4_By_const_value.cpp) - Demonstrates the difference between returning by `const` value vs non-const: returning by const prevents assignment to temporary objects like `(m1 + m2) = m3`.
+5. [Overloading Minus](08_Operator_Overloading_Friends_References/01_Basic_operator_overloading/08_5_Overloading_Minus.cpp) - Provides the complete definition of the binary subtraction operator as a member function for the `Money` class.
 
 ### Ch.8 Section 2 Friend functions and automatic type conversion
+
+- [Type Conversion via Constructors](08_Operator_Overloading_Friends_References/02_Friend_functions_Automatic_type_conversion/08_0_3_Type_Conversion_via_Constructors.cpp) - Demonstrates automatic type conversion using constructors: `Money(double)` allows expressions like `baseAmount + 24.40` but not `24.40 + baseAmount` when operator+ is a member function.
+- [Friend functions](08_Operator_Overloading_Friends_References/02_Friend_functions_Automatic_type_conversion/08_0_4_Friend_functions.cpp) - Shows how friend functions combine advantages of automatic type conversion for all arguments with direct access to private members; enables symmetric operations like `24.40 + baseAmount`.
+6. [Friend vs member function](08_Operator_Overloading_Friends_References/02_Friend_functions_Automatic_type_conversion/08_6_Friend_vs_member_function.cpp) - Explains the difference: friend functions access private members but are called without dot operator and defined without class scope qualifier (`::`); member functions use dot operator and scope qualifier.
+7. [Friend subtractor](08_Operator_Overloading_Friends_References/02_Friend_functions_Automatic_type_conversion/08_7_Friend_subtractor.cpp) - Completes the definition of the friend subtraction operator for the `Money` class, enabling automatic type conversion for both operands.
+8. [Overload less operator](08_Operator_Overloading_Friends_References/02_Friend_functions_Automatic_type_conversion/08_8_Overload_less_operator.cpp) - Overloads the `<` operator as a friend function for the `Money` class; compares two implementations (total cents conversion vs component-wise comparison).
 
 ### Ch.8 Section 3 References and more overloaded operators
 
