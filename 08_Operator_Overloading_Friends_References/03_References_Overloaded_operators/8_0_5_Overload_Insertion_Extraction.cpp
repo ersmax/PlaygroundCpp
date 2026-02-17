@@ -16,9 +16,6 @@ public:
 	double getAmount() const;
 	int getDollars() const;
 	int getCents() const;
-	void input();
-	//  Postcondition: Reads the dollar sign and the amount number
-	void output() const;
 
 	friend std::ostream& operator <<(std::ostream& outputStream, const Money& amount);
 	//   Precondition: outputStream is an output stream and amount is a Money object.
@@ -60,6 +57,10 @@ private:
 	//   Postcondition: Returns the cents part of amount. 
 
 	int round(double number) const;
+
+	int digitToInt(char digit);
+	//   Precondition: digit is a character in '0'..'9'
+	//   Postcondition: Returns the corresponding int value of digit.
 };
 
 int main()
@@ -93,41 +94,25 @@ int main()
 	return 0;
 }
 
-std::ostream& operator <<(std::ostream& outputStream, const Money& amount)
+std::ostream& operator <<(std::ostream& outputStream, const Money& amount)	// pass the object
 {
-	int absDollars = std::abs(amount.dollars);
-	int absCents = std::abs(amount.cents);
-	if (amount.dollars < 0 || amount.cents < 0)
-		outputStream << "-$ ";
+	int absDollars = std::abs(amount.dollars);	// in place of	std::abs(dollars)
+	int absCents = std::abs(amount.cents);		//				std::abs(cents)
+	if (amount.dollars < 0 || amount.cents < 0)	//				if (dollars < 0 || cents < 0)
+		outputStream << "-$ ";					//				std::cout <<
 	else
-		outputStream << "$ ";
+		outputStream << "$ ";					//				std::cout <<
 	
-	outputStream << absDollars;
+	outputStream << absDollars;					//				std::cout <<
 	if (absCents >= 10)
-		outputStream << '.' << absCents;
+		outputStream << '.' << absCents;		//				std::cout <<	
 	else
-		outputStream << ".0" << absCents;
+		outputStream << ".0" << absCents;		//				std::cout <<
 
-	return outputStream;
+	return outputStream;						//	return cout
 }
 
-//void Money::output() const
-//{
-//	int absDollar = std::abs(dollars);
-//	int absCents = std::abs(cents);
-//	if (dollars < 0 || cents < 0)
-//		std::cout << "-$ ";
-//	else
-//		std::cout << "$ ";
-//
-//	std::cout << absDollar;
-//	if (absCents >= 10)
-//		std::cout << '.' << absCents;
-//	else
-//		std::cout << ".0" << absCents;
-//}
-
-std::istream& operator >>(std::istream& inputStream, Money& amount)
+std::istream& operator >>(std::istream& inputStream, Money& amount)		// pass the object
 {
 	char dollarSign;
 	inputStream >> dollarSign;
@@ -137,27 +122,38 @@ std::istream& operator >>(std::istream& inputStream, Money& amount)
 		std::exit(-1);
 	}
 	double amountAsDouble;
-	inputStream >> amountAsDouble;
-	amount.dollars = amount.dollarsPart(amountAsDouble);
-	amount.cents = amount.centsPart(amountAsDouble);
+	inputStream >> amountAsDouble;							// in place of	std::cin >>
+	amount.dollars = amount.dollarsPart(amountAsDouble);	//				dollars = dollarsPart(amountAsDuble)
+	amount.cents = amount.centsPart(amountAsDouble);		//				cents = centsPart(amountAsDouble)
 
 	return inputStream;
 }
 
-//void Money::input()
-//{
-//	char dollarSign;
-//	std::cin >> dollarSign;
-//	if (dollarSign != '$')
-//	{
-//		std::cout << "No dollar sign in Money input\n";
-//		std::exit(-1);
-//	}
-//	double amountAsDouble;
-//	std::cin >> amountAsDouble;
-//	dollars = dollarsPart(amountAsDouble);
-//	cents = centsPart(amountAsDouble);
-//}
+/* Alternative implementation
+std::istream& operator >>(std::istream& inputStream, Money& amount)
+{
+	char dollarSign;
+	inputStream >> dollarSign;
+	if (dollarSign != '$')
+	{
+		std::cout << "No dollar sign in Money input\n";
+		std::exit(-1);
+	}
+	int dollar;
+	char point, decimal1, decimal2;
+	inputStream >> dollar >> point >> decimal1 >> decimal2;
+	amount.dollars = dollar;
+	amount.cents = amount.digitToInt(decimal1) * 10 + amount.digitToInt(decimal2);
+	if (amount.dollars < 0)
+		amount.cents = -amount.cents;
+
+	return inputStream;
+} */
+
+int Money::digitToInt(const char digit)
+{
+	return (static_cast<int>(digit) - static_cast<int>('0'));
+}
 
 const Money operator +(const Money& firstOperand, const Money& secondOperand)
 {
