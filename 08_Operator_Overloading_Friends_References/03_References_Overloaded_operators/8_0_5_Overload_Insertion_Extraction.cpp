@@ -20,9 +20,21 @@ public:
 	//  Postcondition: Reads the dollar sign and the amount number
 	void output() const;
 
-	friend std::ostream& operator <<(std::ostream& outs, const Money& amount);
-	//   Precondition: outs is an output stream and amount is a Money object.
-	// Postcondition: Returns the output stream outs with amount inserted into it.
+	friend std::ostream& operator <<(std::ostream& outputStream, const Money& amount);
+	//   Precondition: outputStream is an output stream and amount is a Money object.
+	// Since << is not a member operator, we need to specify a calling object for member functions and variables of Money
+	// for instance, amount.dollars and amount.cents. This is done by declaring operator << as a friend function of Money.
+	// This is allowed by passing amount as a parameter. The parameter is passed by constant reference to avoid copying, 
+	// while avoiding changes to the object amount.
+	//    Postcondition: Returns the output stream with amount inserted into it, extracted from the object amount.
+
+	friend std::istream& operator >>(std::istream& inputStream, Money& amount);
+	//   Precondition: inputStream is an input stream and amount is a Money object.
+	// As before, the >> operator is not a member function, so we need to specify a calling object 
+	// for member functions and variables of Money, for instance amount.dollarsPart(amountAsDouble) 
+	// and amount.centsPart(amountAsDouble). This is done by declaring operator >> as a friend function of Money.
+	// This is allowed by passing amount as parameter. The parameter is passed by reference to avoid copying.	
+	//   Postcondition: Returns the input stream with amount extracted from it and stored in the object amount.
 
 	friend const Money operator +(const Money& firstOperand, const Money& secondOperand);
 	//   Postcondition: Returns the sum of calling object's and amount2's member values.
@@ -62,7 +74,7 @@ int main()
 
 	Money yourAmount, myAmount(-10, -9);
 	std::cout << "Enter an amount of money:\n";
-	yourAmount.input();
+	std::cin >> yourAmount;
 	std::cout << "Your amount is: " << yourAmount << '\n';
 	std::cout << "My amount is: " << myAmount << '\n';
 
@@ -80,6 +92,72 @@ int main()
 	std::cout << '\n';
 	return 0;
 }
+
+std::ostream& operator <<(std::ostream& outputStream, const Money& amount)
+{
+	int absDollars = std::abs(amount.dollars);
+	int absCents = std::abs(amount.cents);
+	if (amount.dollars < 0 || amount.cents < 0)
+		outputStream << "-$ ";
+	else
+		outputStream << "$ ";
+	
+	outputStream << absDollars;
+	if (absCents >= 10)
+		outputStream << '.' << absCents;
+	else
+		outputStream << ".0" << absCents;
+
+	return outputStream;
+}
+
+//void Money::output() const
+//{
+//	int absDollar = std::abs(dollars);
+//	int absCents = std::abs(cents);
+//	if (dollars < 0 || cents < 0)
+//		std::cout << "-$ ";
+//	else
+//		std::cout << "$ ";
+//
+//	std::cout << absDollar;
+//	if (absCents >= 10)
+//		std::cout << '.' << absCents;
+//	else
+//		std::cout << ".0" << absCents;
+//}
+
+std::istream& operator >>(std::istream& inputStream, Money& amount)
+{
+	char dollarSign;
+	inputStream >> dollarSign;
+	if (dollarSign != '$')
+	{
+		std::cout << "No dollar sign in Money input\n";
+		std::exit(-1);
+	}
+	double amountAsDouble;
+	inputStream >> amountAsDouble;
+	amount.dollars = amount.dollarsPart(amountAsDouble);
+	amount.cents = amount.centsPart(amountAsDouble);
+
+	return inputStream;
+}
+
+//void Money::input()
+//{
+//	char dollarSign;
+//	std::cin >> dollarSign;
+//	if (dollarSign != '$')
+//	{
+//		std::cout << "No dollar sign in Money input\n";
+//		std::exit(-1);
+//	}
+//	double amountAsDouble;
+//	std::cin >> amountAsDouble;
+//	dollars = dollarsPart(amountAsDouble);
+//	cents = centsPart(amountAsDouble);
+//}
 
 const Money operator +(const Money& firstOperand, const Money& secondOperand)
 {
@@ -163,43 +241,12 @@ int Money::getCents() const
 	return cents;
 }
 
-void Money::output() const
-{
-	int absDollar = std::abs(dollars);
-	int absCents = std::abs(cents);
-	if (dollars < 0 || cents < 0)
-		std::cout << "-$ ";
-	else
-		std::cout << "$ ";
-
-	std::cout << absDollar;
-	if (absCents >= 10)
-		std::cout << '.' << absCents;
-	else
-		std::cout << ".0" << absCents;
-}
-
-void Money::input()
-{
-	char dollarSign;
-	std::cin >> dollarSign;
-	if (dollarSign != '$')
-	{
-		std::cout << "No dollar sign in Money input\n";
-		std::exit(-1);
-	}
-	double amountAsDouble;
-	std::cin >> amountAsDouble;
-	dollars = dollarsPart(amountAsDouble);
-	cents = centsPart(amountAsDouble);
-}
-
-int Money::dollarsPart(double amount) const
+int Money::dollarsPart(const double amount) const
 {
 	return static_cast<int>(amount);
 }
 
-int Money::centsPart(double amount) const
+int Money::centsPart(const double amount) const
 {
 	double doubleCents = amount * 100;
 	int intCents = round(std::fabs(doubleCents)) % 100;
@@ -208,7 +255,7 @@ int Money::centsPart(double amount) const
 	return intCents;
 }
 
-int Money::round(double number) const
+int Money::round(const double number) const
 {
 	return static_cast<int>(std::floor(number + 0.5));
 }
