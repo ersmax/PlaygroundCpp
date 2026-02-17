@@ -9,6 +9,7 @@
 set(FOLDERS
     "01_Basic_operator_overloading"
     "02_Friend_functions_Automatic_type_conversion"
+    "03_References_Overloaded_operators"
 )
 
 # Automatically get all .cpp and headers files 
