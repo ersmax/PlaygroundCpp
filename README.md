@@ -320,3 +320,8 @@ Setup: Visual Studio 2026 with C++20 or later standard, CMake 3.25 or higher.
 
 ### Ch.8 Section 3 References and more overloaded operators
 
+- [Overload Insertion Extraction](08_Operator_Overloading_Friends_References/03_References_Overloaded_operators/08_0_5_Overload_Insertion_Extraction.cpp) - Demonstrates overloading insertion (`<<`) and extraction (`>>`) operators as friend functions for the `Money` class; enables direct `cout`/`cin` usage instead of explicit input/output member functions.
+9. [Circular Definition Extraction](08_Operator_Overloading_Friends_References/03_References_Overloaded_operators/08_9_Circular_definition_extraction.cpp) - Explains why the overloaded `<<` operator definition is not circular: it uses the standard library's `<<` for `ostream` and string, while the custom version works for `Money` objects.
+10. [Overload Extraction Insertion as Member](08_Operator_Overloading_Friends_References/03_References_Overloaded_operators/08_10_Overload_extraction_insertion_as_member.cpp) - Explains why `<<` and `>>` cannot be overloaded as member operators: the first operand must be an iostream (`cout`/`cin`), not the class type, so they must be non-member functions.
+
+
