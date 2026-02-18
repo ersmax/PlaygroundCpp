@@ -49,7 +49,7 @@ IntPair& IntPair::operator ++()
 {
 	first++;
 	second++;
-	return *this;
+	return *this;	// reference to current object
 }
 
 const IntPair IntPair::operator ++(int)
