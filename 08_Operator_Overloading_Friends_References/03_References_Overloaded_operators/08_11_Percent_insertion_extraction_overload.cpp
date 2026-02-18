@@ -38,8 +38,8 @@ std::istream& operator >>(std::istream& inputStream, Percent& aPercent)
 	int percentage;
 	char percentageSign;
 	// chain of input operators >> is evaluated left to right.
-	// extraction operator >> returns a reference to the stream 
-	// (std::istream&), allowing the next operation to use that same stream.
+	// extraction operator >> returns a reference (or an alias) to the variable inputStream 
+	// (of type istream), allowing the next operation to use that same stream.
 	inputStream >> percentage >> percentageSign;
 	if (percentage < 0 || percentageSign != '%')
 	{
