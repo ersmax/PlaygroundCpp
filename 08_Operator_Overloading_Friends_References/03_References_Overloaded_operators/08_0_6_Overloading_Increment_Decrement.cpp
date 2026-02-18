@@ -8,7 +8,7 @@ class IntPair
 {
 public:
 	IntPair(const int firstValue, const int secondValue) { setFirst(firstValue); setSecond(secondValue); }
-	IntPair& operator ++();					// Prefix notation (returns by reference)
+	IntPair& operator ++();					// Prefix notation (returns by reference to allows chaining: ++(++a)
 	const IntPair operator ++(int);			// Postfix notation	(returns by value)
 	void setFirst(const int newValue) { first = newValue; }
 	void setSecond(const int newValue) { second = newValue; }
@@ -49,7 +49,9 @@ IntPair& IntPair::operator ++()
 {
 	first++;
 	second++;
-	return *this;	// reference to current object
+	//   *this is the calling object that is being incremented with prefix operator, 
+	// and it is returned by reference to allow chaining of the operator, such as ++(++a)
+	return *this;	
 }
 
 const IntPair IntPair::operator ++(int)
