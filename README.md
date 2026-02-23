@@ -11,7 +11,7 @@ Setup: Visual Studio 2026 with C++20 or later standard, CMake 3.25 or higher.
 
 ---
 
-## Chapter 1 
+## Chapter 1. C++ Basics.
 
 ### Ch.1 Section 2 Expressions
 
@@ -40,7 +40,7 @@ Setup: Visual Studio 2026 with C++20 or later standard, CMake 3.25 or higher.
 
 ---
 
-## Chapter 2 
+## Chapter 2. Flow of Control. 
 
 ### Ch.2 Section 1 Boolean expressions
 
@@ -105,7 +105,7 @@ Setup: Visual Studio 2026 with C++20 or later standard, CMake 3.25 or higher.
 
 ---
 
-## Chapter 3 
+## Chapter 3. Function Basics.
 
 ### Ch.3 Section 1 Predefined Functions
 
@@ -151,7 +151,7 @@ Setup: Visual Studio 2026 with C++20 or later standard, CMake 3.25 or higher.
 
 ---
 
-## Chapter 4
+## Chapter 4. Parameters and Overloading.
 
 ### Ch.4 Section 1 Parameters
 
@@ -188,7 +188,7 @@ Setup: Visual Studio 2026 with C++20 or later standard, CMake 3.25 or higher.
 
 --- 
 
-## Chapter 5
+## Chapter 5. Arrays.
 
 ### Ch.5 Section 1 Introduction to Arrays
 
@@ -236,7 +236,7 @@ Setup: Visual Studio 2026 with C++20 or later standard, CMake 3.25 or higher.
 
 ---
 
-## Chapter 6
+## Chapter 6. Structures and Classes.
 
 ### Ch.6 Section 1 Structures
 
@@ -267,7 +267,7 @@ Setup: Visual Studio 2026 with C++20 or later standard, CMake 3.25 or higher.
 
 ---
 
-## Chapter 7
+## Chapter 7. Constructors and Other Tools.
 
 ### Ch.7 Section 1 Constructors
 - [Constructors](07_Constructors_Other_Tools/01_Constructors/07_00_Constructors.cpp) - Basic `DayOfYear` class demonstrating multiple constructors with different parameter counts
@@ -299,7 +299,7 @@ Setup: Visual Studio 2026 with C++20 or later standard, CMake 3.25 or higher.
 	
 ---
 
-## Chapter 8
+## Chapter 8. Operator Overloading, Friends, and References.
 
 ### Ch.8 Section 1 Basic operator overloading
 - [Non-member overloading](08_Operator_Overloading_Friends_References/01_Basic_operator_overloading/08_0_1_Non_member_overloading.cpp) - Demonstrates overloading of binary +, -, unary -, and == operators as non-member functions for a Money class; uses const reference parameters to avoid copying.
@@ -328,4 +328,12 @@ Setup: Visual Studio 2026 with C++20 or later standard, CMake 3.25 or higher.
 11. [Percent Insertion Extraction Overload](08_Operator_Overloading_Friends_References/03_References_Overloaded_operators/08_11_Percent_insertion_extraction_overload.cpp) - Exercise to overload `>>` and `<<` operators for a `Percent` class handling input/output of percentage values (e.g., `25%`) as friend functions with validation for proper format.
 12. [Postfix Increment Overload](08_Operator_Overloading_Friends_References/03_References_Overloaded_operators/08_12_Postfix_increment_overload.cpp) - Discusses why `(a++)++` is legal but produces unexpected behavior: the second increment operates on the temporary object returned by the first, not the original object `a`.
 
+---
 
+## Chapter 10. Pointers and Dynamic Arrays.
+
+### Ch.10 Section 1 Pointers
+
+### Ch.10 Section 2 Dynamic arrays
+
+### Ch.10 Section 3 Classes, Pointers, and Dynamic Arrays
