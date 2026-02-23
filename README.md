@@ -335,7 +335,7 @@ Setup: Visual Studio 2026 with C++20 or later standard, CMake 3.25 or higher.
 ### Ch.10 Section 1 Pointers
 
 - [10_0_1_Dynamically_allocated_variable_Pointers.cpp](10_Pointers_Dynamic_arrays/01_Pointers/10_0_1_Dynamically_allocated_variable_Pointers.cpp) - Demonstrates pointer manipulation and dynamic variable allocation using `new`.
--. [10_99_Avoid_dangling_pointers.cpp](10_Pointers_Dynamic_arrays/01_Pointers/10_99_Avoid_dangling_pointers.cpp) - Shows a strategy to avoid dereferencing dangling pointers by checking for `nullptr`.
+- [10_99_Avoid_dangling_pointers.cpp](10_Pointers_Dynamic_arrays/01_Pointers/10_99_Avoid_dangling_pointers.cpp) - Shows a strategy to avoid dereferencing dangling pointers by checking for `nullptr`.
 1. [10_1_Pointers.cpp](10_Pointers_Dynamic_arrays/01_Pointers/10_1_Pointers.cpp) - Explains what a pointer is in C++ and its basic usage.
 2. [10_2_Pointers_Use.cpp](10_Pointers_Dynamic_arrays/01_Pointers/10_2_Pointers_Use.cpp) - Shows at least three uses of the `*` operator with pointers.
 3. [10_3_Pointers_Dynamic_variables.cpp](10_Pointers_Dynamic_arrays/01_Pointers/10_3_Pointers_Dynamic_variables.cpp) - Explores pointer assignment, dynamic allocation, and output changes based on pointer manipulation.
