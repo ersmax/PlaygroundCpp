@@ -335,6 +335,7 @@ Setup: Visual Studio 2026 with C++20 or later standard, CMake 3.25 or higher.
 ### Ch.10 Section 1 Pointers
 
 - [Dynamic Variables, Pointers](10_Pointers_Dynamic_arrays/01_Pointers/10_0_1_Dynamically_allocated_variable_Pointers.cpp) - Demonstrates pointer manipulation and dynamic variable allocation using `new`.
+- [Pitfall: Call-by-value pointers](10_Pointers_Dynamic_arrays/01_Pointers/10_0_2_Pitfall_Call_by_value_pointers.cpp) - Demonstrates how passing a pointer by value to a function allows modification of the value pointed to, but not the pointer itself, and highlights the potential for unexpected side effects.
 - [Avoid Dangling Pointers](10_Pointers_Dynamic_arrays/01_Pointers/10_99_Avoid_dangling_pointers.cpp) - Shows a strategy to avoid dereferencing dangling pointers by checking for `nullptr`.
 1. [Pointers](10_Pointers_Dynamic_arrays/01_Pointers/10_1_Pointers.cpp) - Explains what a pointer is in C++ and its basic usage.
 2. [Pointers Handling](10_Pointers_Dynamic_arrays/01_Pointers/10_2_Pointers_Use.cpp) - Shows at least three uses of the `*` operator with pointers.
@@ -344,6 +345,7 @@ Setup: Visual Studio 2026 with C++20 or later standard, CMake 3.25 or higher.
 6. [Destroy Dynamic variables](10_Pointers_Dynamic_arrays/01_Pointers/10_06_Destroy_Dynamic_variable.cpp) - Shows how to destroy a dynamically allocated variable and free its memory.
 7. [Define pointer types with Typedef](10_Pointers_Dynamic_arrays/01_Pointers/10_07_Typedef.cpp) - Demonstrates using `typedef` to define a pointer type for dynamic variables.
 8. [New operator](10_Pointers_Dynamic_arrays/01_Pointers/10_08_New_operator.cpp) - Describes the action of the `new` operator and how errors are indicated.
+
 
 ### Ch.10 Section 2 Dynamic arrays
 
