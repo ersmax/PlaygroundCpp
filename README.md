@@ -349,4 +349,12 @@ Setup: Visual Studio 2026 with C++20 or later standard, CMake 3.25 or higher.
 
 ### Ch.10 Section 2 Dynamic arrays
 
+- [Arrays and Pointer Variables](10_Pointers_Dynamic_arrays/02_Dynamic_Arrays/10_0_4_Arrays_and_Pointer_variables.cpp) - Demonstrates how arrays decay to pointers, pointer assignment to arrays, and why array variables are not modifiable lvalues.
+- [Dynamically Allocated Array](10_Pointers_Dynamic_arrays/02_Dynamic_Arrays/10_0_5_Dynamically_allocated_array.cpp) - Shows how to create a dynamic array with `new`, fill it from user input, search for a value, and properly free memory.
+- [Returning Pointer to Array](10_Pointers_Dynamic_arrays/02_Dynamic_Arrays/10_0_6_Returning_Pointer_to_array.cpp) - Illustrates returning a pointer to a dynamically allocated array from a function, and why arrays themselves cannot be returned.
+9. [Type Definitions for Dynamic Arrays](10_Pointers_Dynamic_arrays/02_Dynamic_Arrays/10_09_Type_definitions.cpp) - Uses `typedef` to define a pointer type for dynamically allocated `char` arrays (type `CharArray`).
+10. [Dynamic Array Manipulation](10_Pointers_Dynamic_arrays/02_Dynamic_Arrays/10_10_Dynamic_array_manipulation.cpp) - Reads ten numbers from input into a dynamically allocated array using a pointer.
+11. [Destroy Dynamic Array](10_Pointers_Dynamic_arrays/02_Dynamic_Arrays/10_11_Destroy_Dynamic_array.cpp) - Shows how to properly delete a dynamically allocated array and set the pointer to `nullptr`.
+12. [Dynamic Array Output Example](10_Pointers_Dynamic_arrays/02_Dynamic_Arrays/10_12_Dynamic_array_manipulation.cpp) - Fills an array using a pointer and prints its contents, demonstrating pointer/array equivalence in output.
+
 ### Ch.10 Section 3 Classes, Pointers, and Dynamic Arrays
