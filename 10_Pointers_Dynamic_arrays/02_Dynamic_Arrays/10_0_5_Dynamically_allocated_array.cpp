@@ -41,6 +41,7 @@ int main( )
 		std::cout << target << " is element " << location << '\n';
 
 	delete [] a;
+	a = nullptr;
 
 	std::cout << '\n';
 	return 0;
