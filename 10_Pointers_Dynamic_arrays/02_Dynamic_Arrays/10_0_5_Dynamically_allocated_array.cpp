@@ -10,12 +10,12 @@
 
 typedef int* IntPtr;
 
-void fillArray(int a[], int size);
+void fillArray(int a[], int size);	// or void fillArray(int* a, int size)
 //   Precondition: `size` is the size of the array `a`
 //   Postcondition: `a[0]` through `a[size-1]` have been filled with
 // values read from the std console input.
 
-int search(int a[], int size, int target);
+int search(int a[], int size, int target); // or int search(int* a, int size, int target);
 //   Precondition: `size` is the size of the array `a`
 // The array elements `a[0]` through `a[size-1]` have values.
 //   Postcondition: if target is in the array, returns the first
@@ -38,7 +38,10 @@ int main( )
 	std::cin >> target;
 	const int location = search(a, arraySize, target);
 	if (location == -1)
+		std::cout << target << " is not in the array\n";
+	else
 		std::cout << target << " is element " << location << '\n';
+
 
 	delete [] a;
 	a = nullptr;
