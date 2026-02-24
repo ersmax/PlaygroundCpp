@@ -40,7 +40,7 @@ int main( )
 	if (location == -1)
 		std::cout << target << " is element " << location << '\n';
 
-	delete[] a;
+	delete [] a;
 
 	std::cout << '\n';
 	return 0;
