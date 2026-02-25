@@ -1,0 +1,189 @@
+//   This program showcases the overload of = assignment operator through the use of
+// pointers and dynamically allocated arrays.
+// Objects of the class are partially filled arrays of doubles.
+// The program asks the user to input two arrays of doubles
+// and then assign the values of one array to the other with overload operator.
+
+#include <iostream>
+
+class PFArrayD
+{
+public:
+	PFArrayD();		// Initialize with a capacity of 50
+	PFArrayD(int capacityValue);
+	PFArrayD(const PFArrayD& pfaObject);	
+	//	 Copy constructor
+
+	void addElement(double element);
+	//   Precondition: the array is not full
+	//   Postcondition: The element has been added
+	
+	bool full() const { return (capacity == used); }
+	int getCapacity() const { return capacity; }
+	int getNumberUsed() const { return used; }
+
+	void emptyArray() { used = 0; }
+	//   Postcondition: empty the array
+
+	double& operator [](int index) const;
+	//   Postcondition: read and change access to elements 0 through numberUsed - 1
+
+	PFArrayD& operator =(const PFArrayD& rightSide);
+	//   Postcondition: overload assignment operator after checking that rightSide
+	// is not equal to the calling object.
+
+	~PFArrayD();
+	//	 Destructor
+private:
+	double *a;		// Pointer to an array of doubles
+	int capacity;	// Size of array (n elements for which memory has been allocated)
+	int used;		// N of array positions currently in use
+};
+
+
+void testPFArrayD();
+// Postcondition: Conducts one test of the class PFArrayD
+
+int main( )
+{
+	std::cout << "This program tests the class PFArrayD.\n";
+	char ans;
+	do
+	{
+		testPFArrayD();
+		std::cout << "Test again (y/n):\n";
+		std::cin >> ans;
+	} while ((ans == 'y') || (ans == 'Y'));
+
+	std::cout << '\n';
+	return 0;
+}
+
+PFArrayD::PFArrayD() : capacity(50), used(0)
+{
+	a = new double[capacity];
+	// Create dynamically allocated array of doubles and return pointer to `a`
+}
+
+PFArrayD::PFArrayD(const int capacityValue) : capacity(capacityValue), used(0)
+{
+	a = new double[capacity];
+}
+
+PFArrayD::PFArrayD(const PFArrayD& pfaObject) : capacity(pfaObject.getCapacity()),	// TODO: replaceable ?
+												used(pfaObject.getNumberUsed())		// TODO replaceable ?
+												
+{
+	a = new double[capacity];
+	for (int idx = 0; idx < used; idx++)
+		a[idx] = pfaObject.a[idx];
+}
+
+void PFArrayD::addElement(const double element)
+{
+	if (used >= capacity)
+	{
+		std::cout << "Attempt to exceed capacity in PFArrayD\n";
+		std::exit(0);
+	}
+	a[used] = element;
+	used++;
+}
+
+double& PFArrayD::operator [](const int index) const
+{
+	if (index >= used)
+	{
+		std::cout << "Illegal index in PFArrayD\n";
+		std::exit(0);
+	}
+	return a[index];
+}
+
+PFArrayD& PFArrayD::operator =(const PFArrayD& rightSide)
+{
+	if (capacity != rightSide.capacity)
+	{
+		delete [] a;
+		a = new double[rightSide.capacity];
+	}
+	
+	capacity = rightSide.capacity;
+	used = rightSide.used;
+	for (int idx = 0; idx < used; idx++)
+		a[idx] = rightSide[idx];
+	return *this;
+}
+
+PFArrayD::~PFArrayD()
+{
+	delete [] a;
+	// a = nullptr;  
+	//   not necessary because after destructor runs,
+	// the memory pointed by `a` is reclaimed and there is 
+	// no risk accessing `a`, which is defined in the class, 
+	// because the object is gone.
+	// The object is being destroyed and its memory is reclaimed.
+	// The memory assigned to dynamic variable and pointed to `a`
+	// is returned to the freestore manager
+}
+
+void testPFArrayD()
+{
+	int cap;
+	std::cout << "Enter capacity of the array:\n";
+	std::cin >> cap;
+	PFArrayD temp(cap);
+
+	std::cout << "Enter up to " << cap << " non negative numbers\n";
+	std::cout << "Place a negative sentinel value at the end\n";
+
+	double next;
+	std::cin >> next;
+	while ((next >= 0) && (!temp.full( )))
+	{
+		temp.addElement(next);
+		std::cin >> next;
+	}
+
+	std::cout << "You entered the following " << temp.getNumberUsed() << " numbers:\n";
+	int size = temp.getNumberUsed();
+	for (int idx = 0; idx < size; idx++)
+		std::cout << temp[idx] << " ";
+
+	std::cout << '\n';
+	std::cout << "(plus a sentinel value.)\n";
+
+
+	int cap2;
+	std::cout << "Enter capacity of the array:\n";
+	std::cin >> cap2;
+	PFArrayD temp2(cap2);
+
+	std::cout << "Enter up to " << cap2 << " non negative numbers\n";
+	std::cout << "Place a negative sentinel value at the end\n";
+
+	double next2;
+	std::cin >> next2;
+	while ((next2 >= 0) && (!temp2.full()))
+	{
+		temp2.addElement(next2);
+		std::cin >> next2;
+	}
+
+	std::cout << "You entered the following " << temp2.getNumberUsed() << " numbers:\n";
+	int size2 = temp2.getNumberUsed();
+	for (int idx = 0; idx < size2; idx++)
+		std::cout << temp2[idx] << " ";
+
+	std::cout << '\n';
+	std::cout << "(plus a sentinel value.)\n";
+
+	temp = temp2;
+	int size3 = temp.getNumberUsed();
+	for (int idx = 0; idx < size3; idx++)
+		std::cout << temp[idx] << " ";
+
+	std::cout << '\n';
+	std::cout << "(plus a sentinel value.)\n";
+}

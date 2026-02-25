@@ -9,6 +9,7 @@
 set(FOLDERS
     "01_Pointers"
     "02_Dynamic_Arrays"
+    "03_Classes_Pointers_Dynamic_arrays"
 )
 
 # Automatically get all .cpp and headers files 
