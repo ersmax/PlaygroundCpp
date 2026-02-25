@@ -117,8 +117,15 @@ PFArrayD& PFArrayD::operator =(const PFArrayD& rightSide)
 	// we would not be able to trace back the values stored
 	// in the array, and the assignment myArray = myArray
 	// would inevitably fail. 
-	// The pointer myArray.a would be undefined, and
-	// the assignment operator would corrupt the object myArray
+	// a would turn out to be a dangling pointer.
+	// Hence, the condition ensures that if the same object 
+	// occurs on both sides of the assignment operator, 
+	// then the array named by the member variable `a` will
+	// not be deleted with a call to delete.
+	
+	// This code below causes undefined behaviour
+	// delete[] a;
+	// a = new double[rightSide.capacity];
 	
 	capacity = rightSide.capacity;
 	used = rightSide.used;
@@ -192,6 +199,7 @@ void testPFArrayD()
 	std::cout << "(plus a sentinel value.)\n";
 
 	temp = temp2;
+	// temp = temp // testing the overload = 
 	int size3 = temp.getNumberUsed();
 	for (int idx = 0; idx < size3; idx++)
 		std::cout << temp[idx] << " ";
