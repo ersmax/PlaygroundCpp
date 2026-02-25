@@ -4,6 +4,10 @@
 // The program asks the user to input two arrays of doubles
 // and then assign the values of one array to the other with overload operator.
 
+//   The advantage of using a class over a dynamic array or standard array are that
+// we don't have to keep track of the size (the private variable used will do), and
+// we get an error message if we try to access an illegal array index.
+
 #include <iostream>
 
 class PFArrayD
@@ -107,6 +111,14 @@ PFArrayD& PFArrayD::operator =(const PFArrayD& rightSide)
 		delete [] a;
 		a = new double[rightSide.capacity];
 	}
+	//   This condition also checks for the case of 
+	// having the same object on both sides of the 
+	// assignment operator. If we destroy the dynamic array,
+	// we would not be able to trace back the values stored
+	// in the array, and the assignment myArray = myArray
+	// would inevitably fail. 
+	// The pointer myArray.a would be undefined, and
+	// the assignment operator would corrupt the object myArray
 	
 	capacity = rightSide.capacity;
 	used = rightSide.used;
