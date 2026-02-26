@@ -359,3 +359,10 @@ Setup: Visual Studio 2026 with C++20 or later standard, CMake 3.25 or higher.
 12. [Dynamic Array Output Example](10_Pointers_Dynamic_arrays/02_Dynamic_Arrays/10_12_Dynamic_array_manipulation.cpp) - Fills an array using a pointer and prints its contents, demonstrating pointer/array equivalence in output.
 
 ### Ch.10 Section 3 Classes, Pointers, and Dynamic Arrays
+- [Overloading Assignment Operator with Class Pointer](10_Pointers_Dynamic_arrays/03_Classes_Pointers_Dynamic_arrays/10_0_8_Overloading_Assignment_operator_Class_pointer.cpp) - Demonstrates overloading the assignment operator for a class managing a dynamic array, including copy constructor, destructor, and safe assignment.
+13. [Destructor](10_Pointers_Dynamic_arrays/03_Classes_Pointers_Dynamic_arrays/10_13_Destructor.cpp) - Explains the naming and purpose of a destructor in a class, with a minimal example.
+14. [Destructor Handling](10_Pointers_Dynamic_arrays/03_Classes_Pointers_Dynamic_arrays/10_14_Destructor_handling.cpp) - Shows how adding output to a destructor affects program output and when destructors are called.
+15. [Copy Constructor](10_Pointers_Dynamic_arrays/03_Classes_Pointers_Dynamic_arrays/10_15_Copy_constructor.cpp) - Explains the meaning of each occurrence of the class name in a copy constructor definition.
+16. [Destructor Handling 2](10_Pointers_Dynamic_arrays/03_Classes_Pointers_Dynamic_arrays/10_16_Destructor_handling2.cpp) - Answers conceptual questions about destructors: what they are, when they are called, and what they should do.
+17. [The Big Three](10_Pointers_Dynamic_arrays/03_Classes_Pointers_Dynamic_arrays/10_17_The_big_three.cpp) - Discusses why custom assignment operators, copy constructors, and destructors are only needed for classes with dynamic memory (not for built-in types).
+
