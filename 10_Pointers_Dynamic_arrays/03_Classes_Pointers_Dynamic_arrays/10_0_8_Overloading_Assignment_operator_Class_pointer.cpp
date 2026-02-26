@@ -7,6 +7,22 @@
 //   The advantage of using a class over a dynamic array or standard array are that
 // we don't have to keep track of the size (the private variable used will do), and
 // we get an error message if we try to access an illegal array index.
+/*
+This program tests the class PFArrayD.
+Enter capacity of the array :
+3
+Enter up to 3 non negative numbers
+Place a negative sentinel value at the end
+1.2 5.4 1.2 - 1
+You entered the following 3 numbers :
+1.2 5.4 1.2
+(plus a sentinel value.)
+
+Good - bye cruel world!The short life of
+this dynamic array is about to end
+Test again(y / n) :
+n
+*/
 
 #include <iostream>
 
