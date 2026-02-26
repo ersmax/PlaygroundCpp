@@ -48,6 +48,10 @@ private:
 void testPFArrayD();
 // Postcondition: Conducts one test of the class PFArrayD
 
+void showPFArrayD(PFArrayD parameter) { std::cout << "The first value is: " << parameter[0] << '\n'; }
+// Precondition: `parameter` is an object passed by value to test the copy constructor of the class PFArrayD
+// Postcondition: Displays the first value of the array named by the member variable `a` of the object `parameter`
+
 int main( )
 {
 	std::cout << "This program tests the class PFArrayD.\n";
@@ -74,8 +78,8 @@ PFArrayD::PFArrayD(const int capacityValue) : capacity(capacityValue), used(0)
 	a = new double[capacity];
 }
 
-PFArrayD::PFArrayD(const PFArrayD& pfaObject) : capacity(pfaObject.getCapacity()),	// TODO: replaceable ?
-												used(pfaObject.getNumberUsed())		// TODO replaceable ?
+PFArrayD::PFArrayD(const PFArrayD& pfaObject) : capacity(pfaObject.capacity),	
+												used(pfaObject.used)		
 												
 {
 	a = new double[capacity];
@@ -198,12 +202,30 @@ void testPFArrayD()
 	std::cout << '\n';
 	std::cout << "(plus a sentinel value.)\n";
 
+
+	// Testing overload assignment operator
 	temp = temp2;
-	// temp = temp // testing the overload = 
+	// temp = temp // testing overload of same object
 	int size3 = temp.getNumberUsed();
 	for (int idx = 0; idx < size3; idx++)
 		std::cout << temp[idx] << " ";
 
 	std::cout << '\n';
 	std::cout << "(plus a sentinel value.)\n";
+
+	// Testing overload copy constructor
+	PFArrayD sample(2);
+	sample.addElement(5.5);
+	sample.addElement(6.6);
+	showPFArrayD(sample);
+	// If a copy constructor is not defined, then the default copy constructor will be used, 
+	// which performs a shallow copy of the object.
+
+	std::cout << "After call: " << sample[0] << '\n';
+	// If a copy constructor is not defined, this line will crash, because
+	// the default copy constructor will perform a shallow copy of the object `sample`, 
+	// and the destructor will be called twice on the same memory location, 
+	// causing to delete first `parameter`, and hence parameter.a, 
+	// then to delete `sample`, and hence sample.a, which is the same memory location as parameter.a,
+	// This leads to undefined behavior and a crash of the program.e
 }
