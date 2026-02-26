@@ -366,3 +366,11 @@ Setup: Visual Studio 2026 with C++20 or later standard, CMake 3.25 or higher.
 16. [Destructor Handling 2](10_Pointers_Dynamic_arrays/03_Classes_Pointers_Dynamic_arrays/10_16_Destructor_handling2.cpp) - Answers conceptual questions about destructors: what they are, when they are called, and what they should do.
 17. [The Big Three](10_Pointers_Dynamic_arrays/03_Classes_Pointers_Dynamic_arrays/10_17_The_big_three.cpp) - Discusses why custom assignment operators, copy constructors, and destructors are only needed for classes with dynamic memory (not for built-in types).
 
+---
+
+## 21. Extra
+
+### 21. Section 01 Smart Pointers
+- [Linked List with Regular Pointers](21_Extra/01_Smart_Pointers/21_0_1_Linked_list_regular_pointers.cpp) - Implements a linked list using raw pointers, demonstrating manual memory management and illustrating a memory leak when nodes are not deleted.
+- [Linked List with shared_ptr](21_Extra/01_Smart_Pointers/21_0_2_Linked_list_shared_ptr.cpp) - Uses `std::shared_ptr` to manage linked list nodes, showing automatic memory deallocation via reference counting when all references go out of scope.
+- [Linked List with shared_ptr (Faulty Reference)](21_Extra/01_Smart_Pointers/21_0_3_Linked_list_shared_ptr_faulty.cpp) - Demonstrates how a global `shared_ptr` reference prevents automatic deletion of some nodes until the program exits, highlighting reference counting behavior.
