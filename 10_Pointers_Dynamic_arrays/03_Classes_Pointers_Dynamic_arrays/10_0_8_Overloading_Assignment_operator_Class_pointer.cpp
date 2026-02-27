@@ -126,6 +126,9 @@ double& PFArrayD::operator [](const int index) const
 
 PFArrayD& PFArrayD::operator =(const PFArrayD& rightSide)
 {
+	if (this == &rightSide)
+		return *this;
+	
 	if (capacity != rightSide.capacity)
 	{
 		delete [] a;
@@ -220,8 +223,8 @@ void testPFArrayD()
 
 
 	// Testing overload assignment operator
-	temp = temp2;
-	// temp = temp // testing overload of same object
+	//temp = temp2;
+	temp = temp; // testing overload of same object
 	int size3 = temp.getNumberUsed();
 	for (int idx = 0; idx < size3; idx++)
 		std::cout << temp[idx] << " ";
