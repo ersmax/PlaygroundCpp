@@ -31,7 +31,7 @@ class PFArrayD
 public:
 	PFArrayD();		// Initialize with a capacity of 50
 	PFArrayD(int capacityValue);
-	PFArrayD(const PFArrayD& pfaObject);	
+	//PFArrayD(const PFArrayD& pfaObject);	
 	//	 Copy constructor
 
 	void addElement(double element);
@@ -94,14 +94,14 @@ PFArrayD::PFArrayD(const int capacityValue) : capacity(capacityValue), used(0)
 	a = new double[capacity];
 }
 
-PFArrayD::PFArrayD(const PFArrayD& pfaObject) : capacity(pfaObject.capacity),	
-												used(pfaObject.used)		
-												
-{
-	a = new double[capacity];
-	for (int idx = 0; idx < used; idx++)
-		a[idx] = pfaObject.a[idx];
-}
+//PFArrayD::PFArrayD(const PFArrayD& pfaObject) : capacity(pfaObject.capacity),	
+//												used(pfaObject.used)		
+//												
+//{
+//	a = new double[capacity];
+//	for (int idx = 0; idx < used; idx++)
+//		a[idx] = pfaObject.a[idx];
+//}
 
 void PFArrayD::addElement(const double element)
 {
@@ -240,6 +240,9 @@ void testPFArrayD()
 	// If a copy constructor is not defined, then the default copy constructor will be used, 
 	// which performs a shallow copy of the object.
 
+	std::cout << "Debug\n";
+	int num;
+	std::cin >> num;
 	std::cout << "After call: " << sample[0] << '\n';
 	// If a copy constructor is not defined, this line will crash, because
 	// the default copy constructor will perform a shallow copy of the object `sample`, 
