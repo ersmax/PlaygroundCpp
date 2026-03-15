@@ -22,7 +22,7 @@ foreach(folder ${FOLDERS})
         get_filename_component(exec_name ${source} NAME_WE)
 
         # Create standalone example target from a single source file
-        # add_executable(${exec_name} ${source} ${HEADERS} "01_Separate_compilation/11_0_5_Digital_Time_change/11_0_01_dTime.cpp" "01_Separate_compilation/11_0_5_Digital_Time_change/11_0_01_dTime.h" "01_Separate_compilation/11_0_5_Digital_Time_change/11_0_01_dTime_App.cpp")
+        add_executable(${exec_name} ${source} ${HEADERS})
     endforeach()
 endforeach()
 
