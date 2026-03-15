@@ -8,9 +8,9 @@ int main( )
 	std::cout	<< "You may write midnight as either 0:00 or 24:00\n"
 				<< "But I will always write it as 0:00\n"
 				<< "Enter the time in 24-hour notation:\n";
-  std::cin >> clock;
+	std::cin >> clock;
 	oldClock = clock;
-	clock.advance(15);
+clock.advance(15);
 	if (clock == oldClock)
 		std::cout << "Something is wrong\n";
 	
