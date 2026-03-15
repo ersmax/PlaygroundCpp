@@ -40,3 +40,80 @@ void DigitalTime::advance(const int hoursAdded, const int minutesAdded)
 	hour = (hour + hoursAdded) % 24;
 	advance(minutesAdded);
 }
+
+bool operator ==(const DigitalTime& time1, const DigitalTime& time2)
+{
+	return (time1.hour == time2.hour && time1.minute == time2.minute);
+}
+
+std::ostream& operator <<(std::ostream& outputStream, const DigitalTime& theObject)
+{
+	outputStream << theObject.hour << ':';
+	if (theObject.minute < 10)
+		outputStream << '0';
+	outputStream << theObject.minute;
+	return outputStream;
+}
+
+std::istream& operator >>(std::istream& inputStream, DigitalTime& theObject)
+{
+	DigitalTime::readHour(theObject.hour);
+	DigitalTime::readMinute(theObject.minute);
+	return inputStream;
+}
+
+int DigitalTime::digitToInt(const char c)
+{
+	return (static_cast<int>(c) - static_cast<int>('0'));
+}
+
+void DigitalTime::readHour(int& theHour)
+{
+	char c1, c2;
+	std::cin >> c1 >> c2;
+	if (!(std::isdigit(c1) && std::isdigit(c2) || c2  == ':'))
+	{
+		std::cout << "Error: illegal input to readHour\n";
+		std::exit(1);
+	}
+
+	if (isdigit(c1) && c2 == ':')
+		theHour = digitToInt(c1);
+	else if (std::isdigit(c1) && std::isdigit(c2))
+	{
+		theHour = digitToInt(c1) * 10 + digitToInt(c2);
+		std::cin >> c2;		// Now read `:`
+		if (c2 != ':')
+		{
+			std::cout << "Error: illegal input to readHour\n";
+			std::exit(1);
+		}
+	}
+	if (theHour == 24)
+		theHour = 0;		// Standardize midnight as 0:00
+
+	if (theHour < 0 || theHour > 23)
+	{
+		std::cout << "Error: illegal input to readHour\n";
+		std::exit(1);
+	}
+}
+
+void DigitalTime::readMinute(int& theMinute)
+{
+	char c1, c2;
+	std::cin >> c1 >> c2;
+
+	if (!(std::isdigit(c1) && std::isdigit(c2)))
+	{
+		std::cout << "Error: illegal input to readMinute\n";
+		std::exit(1);
+	}
+	theMinute = digitToInt(c1) * 10 + digitToInt(c2);
+
+	if (theMinute < 0 || theMinute > 59)
+	{
+		std::cout << "Error: illegal input to readMinute\n";
+		std::exit(1);
+	}
+}
