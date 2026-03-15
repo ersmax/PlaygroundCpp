@@ -66,7 +66,8 @@ them.
     - The insertion operator << now takes the modulo of the minute private variable by the 
 	  total minutes over the day (24 * 60) to get the hour and minutes. 
 	  This is done to avoid printing times greater than 24:00, which would be confusing. 
-	  For example, if the internal minute value is 1500, it will print "1500 is equivalent to: 1:00" instead of "25:00".
+	  For example, if the internal minute value is 1500, it will print "1500 is equivalent 
+	  to: 1:00" instead of "25:00".
 	  It also prints the internal minute value before the equivalent "HH:MM" form.
 */
 
