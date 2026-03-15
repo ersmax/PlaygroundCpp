@@ -10,7 +10,7 @@ int main( )
 				<< "Enter the time in 24-hour notation:\n";
 	std::cin >> clock;
 	oldClock = clock;
-clock.advance(15);
+	clock.advance(15);
 	if (clock == oldClock)
 		std::cout << "Something is wrong\n";
 	

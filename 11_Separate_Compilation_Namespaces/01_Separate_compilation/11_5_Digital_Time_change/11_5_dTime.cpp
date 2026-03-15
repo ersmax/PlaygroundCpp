@@ -46,18 +46,26 @@ bool operator ==(const DigitalTime& time1, const DigitalTime& time2)
 
 std::ostream& operator <<(std::ostream& outputStream, const DigitalTime& theObject)
 {
+	constexpr int DAY_MINUTES = 24 * MINUTES;
+	const int totalMinutes = theObject.minute % DAY_MINUTES;
+
+	const int hour = totalMinutes / MINUTES;
+	const int minLeft = totalMinutes % MINUTES;
+
 	outputStream << theObject.minute << " is equivalent to: ";
-	outputStream << theObject.minute / 60 << ':';
-	if (theObject.minute % 60 < 10)
+	outputStream << hour << ':';
+	if (minLeft < 10)
 		outputStream << '0';
-	outputStream << theObject.minute % 60;
+	outputStream << minLeft;
 	return outputStream;
 }
 
 std::istream& operator >>(std::istream& inputStream, DigitalTime& theObject)
 {
-	DigitalTime::readHour(theObject.minute);
-	DigitalTime::readMinute(theObject.minute);
+	int newHours, newMinutes;
+	DigitalTime::readHour(newHours);
+	DigitalTime::readMinute(newMinutes);
+	theObject.minute = newHours * MINUTES + newMinutes;
 	return inputStream;
 }
 
@@ -70,7 +78,7 @@ void DigitalTime::readHour(int& theHour)
 {
 	char c1, c2;
 	std::cin >> c1 >> c2;
-	if (!(std::isdigit(c1) && std::isdigit(c2) || c2  == ':'))
+	if (!(std::isdigit(c1) && std::isdigit(c2) || c2 == ':'))
 	{
 		std::cout << "Error: illegal input to readHour\n";
 		std::exit(1);
@@ -88,12 +96,14 @@ void DigitalTime::readHour(int& theHour)
 			std::exit(1);
 		}
 	}
+	if (theHour == 24)
+		theHour = 0;		// Standardize midnight as 0:00
+
 	if (theHour < 0 || theHour > 23)
 	{
 		std::cout << "Error: illegal input to readHour\n";
 		std::exit(1);
 	}
-	theHour *= MINUTES;
 }
 
 void DigitalTime::readMinute(int& theMinute)
@@ -106,13 +116,11 @@ void DigitalTime::readMinute(int& theMinute)
 		std::cout << "Error: illegal input to readMinute\n";
 		std::exit(1);
 	}
-	const int newMinutes = digitToInt(c1) * 10 + digitToInt(c2);
+	theMinute = digitToInt(c1) * 10 + digitToInt(c2);
 
-	if (newMinutes < 0 || newMinutes > 59)
+	if (theMinute < 0 || theMinute > 59)
 	{
 		std::cout << "Error: illegal input to readMinute\n";
 		std::exit(1);
 	}
-
-	theMinute += newMinutes;
 }
