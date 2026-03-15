@@ -5,7 +5,7 @@
 # Add source to this project's executable.
 # add_executable ()
 
-# List all folders
+# List all folders that contain single-file examples
 set(FOLDERS
     "01_Separate_compilation"
     "02_Namespaces"
@@ -26,11 +26,7 @@ foreach(folder ${FOLDERS})
     endforeach()
 endforeach()
 
-# Explicit target for the DigitalTime example that needs multiple sources
-add_executable(11_0_1_dTime_App
-    "01_Separate_compilation/11_0_01_DigitalTime/11_0_1_dTime_App.cpp"
-    "01_Separate_compilation/11_0_01_DigitalTime/11_0_1_dTime.cpp"
-)
-
+# Multi-source examples live in their own subfolders with local CMakeLists.txt
+add_subdirectory ("01_Separate_compilation/11_0_01_DigitalTime")
 
 # TODO: Add tests and install targets if needed.
