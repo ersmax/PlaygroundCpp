@@ -22,11 +22,12 @@ foreach(folder ${FOLDERS})
         get_filename_component(exec_name ${source} NAME_WE)
 
         # Create standalone example target from a single source file
-        add_executable(${exec_name} ${source} ${HEADERS})
+        # add_executable(${exec_name} ${source} ${HEADERS} "01_Separate_compilation/11_0_5_Digital_Time_change/11_0_01_dTime.cpp" "01_Separate_compilation/11_0_5_Digital_Time_change/11_0_01_dTime.h" "01_Separate_compilation/11_0_5_Digital_Time_change/11_0_01_dTime_App.cpp")
     endforeach()
 endforeach()
 
 # Multi-source examples live in their own subfolders with local CMakeLists.txt
 add_subdirectory ("01_Separate_compilation/11_0_01_DigitalTime")
+add_subdirectory ("01_Separate_compilation/11_5_Digital_Time_change")
 
 # TODO: Add tests and install targets if needed.
