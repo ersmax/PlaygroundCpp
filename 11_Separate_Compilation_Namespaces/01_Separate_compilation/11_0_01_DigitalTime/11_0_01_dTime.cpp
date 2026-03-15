@@ -1,10 +1,10 @@
-//   This is the implementation file 11_0_1_dTime.cpp of the class DigitalTime.
-// The interface for the class DigitalTime is in the header file 11_0_1_dTime.h
+//   This is the implementation file 11_0_01_dTime.cpp of the class DigitalTime.
+// The interface for the class DigitalTime is in the header file 11_0_01_dTime.h
 
 #include <iostream>
 #include <cctype>
 #include <cstdlib>			
-#include "11_0_1_dTime.h"
+#include "11_0_01_dTime.h"
 
 DigitalTime::DigitalTime(const int theHour, const int theMinute)
 {

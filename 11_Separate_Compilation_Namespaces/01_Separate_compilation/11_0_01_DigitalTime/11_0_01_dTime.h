@@ -4,6 +4,9 @@
 // The values are input and output in 24-hour, as in 9:30 for 9:30 AM 
 // and 14:45 for 2:45 PM.
 
+#ifndef DIGITALTIME_11_0_01_H
+#define DIGITALTIME_11_0_01_H
+
 #include <iostream>
 
 class DigitalTime
@@ -41,3 +44,5 @@ private:
 	//   Precondition: `c` is one of the digits `0` through `9`
 	//   Postcondition: Returns the integer for the digit; for example, digit('3') returns 3
 };
+
+#endif // DIGITALTIME_11_0_01_H
