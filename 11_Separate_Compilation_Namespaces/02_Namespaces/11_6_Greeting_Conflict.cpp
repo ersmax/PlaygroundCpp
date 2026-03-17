@@ -1,8 +1,9 @@
 //   Consider the program shown in Display 11.5. Could we use the name greeting
 // in place of bigGreeting ?
 
-//  We cannot, because greeting() would be defined in namespaces Space1, Space2 and global namespace
-// Thus it'd be impossible for the compiler to distinguish between different declarations.
+//  We cannot, because greeting() would be defined in namespaces Space1 and global namespace at the same time
+// Ot in namespace Space2 and global namespace at the same time.
+// Thus, it'd be impossible for the compiler to distinguish between different declarations.
 
 /* Formally:
  * No. If you replace bigGreeting with greeting, you will have a definition for the
