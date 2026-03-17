@@ -1,0 +1,19 @@
+//   Consider the program shown in Display 11.5. Could we use the name greeting
+// in place of bigGreeting ?
+
+//  We cannot, because greeting() would be defined in namespaces Space1, Space2 and global namespace
+// Thus it'd be impossible for the compiler to distinguish between different declarations.
+
+/* Formally:
+ * No. If you replace bigGreeting with greeting, you will have a definition for the
+name greeting in the global namespace. There are parts of the program where all
+the name definitions in the namespace Space1 and all the name definitions in the
+global namespace are simultaneously available. In those parts of the program, there
+would be two distinct definitions for
+void greeting( );
+*/
+
+int  main()
+{
+	return 0;
+}
