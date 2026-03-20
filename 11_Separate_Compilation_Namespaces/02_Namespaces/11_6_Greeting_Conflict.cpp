@@ -3,7 +3,8 @@
 
 //  We cannot, because greeting() would be defined in namespaces Space1 and global namespace at the same time
 // Ot in namespace Space2 and global namespace at the same time.
-// Thus, it'd be impossible for the compiler to distinguish between different declarations.
+// Thus, it'd be impossible for the compiler to distinguish between different declarations when
+// we use both namespaces at the same time.
 
 /* Formally:
  * No. If you replace bigGreeting with greeting, you will have a definition for the
