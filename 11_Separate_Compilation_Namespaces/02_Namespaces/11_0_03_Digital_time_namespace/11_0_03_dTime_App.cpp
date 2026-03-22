@@ -2,7 +2,7 @@
 #include <iostream>
 #include "11_0_03_dTime.h"
 
-using myNamespace::DigitalTime;
+using myNamespace::DigitalTime;			// using declaration
 int main()
 {
 	DigitalTime clock, oldClock;

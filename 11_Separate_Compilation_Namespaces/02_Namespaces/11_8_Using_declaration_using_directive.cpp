@@ -23,7 +23,7 @@ int main()
 {
 	using GoodBye::message;
 	{
-		using Hello::message;
+		using Hello::message;		// using declaration 
 		message();					// Hello.
 		GoodBye::message();			// Good-Bye.
 	}
