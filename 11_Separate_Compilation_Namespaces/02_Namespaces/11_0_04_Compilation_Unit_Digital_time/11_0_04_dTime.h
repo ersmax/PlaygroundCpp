@@ -8,7 +8,6 @@
 
 #include <iostream>
 
-
 namespace myNamespace
 {
 	class DigitalTime

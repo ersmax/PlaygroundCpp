@@ -6,6 +6,13 @@
 #include <cstdlib>
 #include "11_0_04_dTime.h"
 
+#include "../../01_Separate_compilation/11_0_01_DigitalTime/11_0_01_dTime.h"
+
+//   In 11_0_03 and 11_0_01, the qualifier private was used for the helper functions to
+// make a member function hidden. In this version, however, the unnamed namespace 
+// is used to make a name local to a compilation unit. This happens to the 3 
+// helper functions readMinute, readHour and digitToInt.
+
 namespace
 {
 	int digitToInt(const char c)
@@ -15,6 +22,8 @@ namespace
 
 	void readMinute(int& theMinute)
 	{
+		test();
+		
 		char c1, c2;
 		std::cin >> c1 >> c2;
 		if (!(std::isdigit(c1) && std::isdigit(c2)))

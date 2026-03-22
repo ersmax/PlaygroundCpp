@@ -22,7 +22,7 @@ int main( )
 	std::cout << "15 minutes later the time will be " << clock << '\n';
 	clock.advance(2, 15);
 	std::cout << "2 hours and 15 min later after that, the time will be: " << clock << '\n';
-	
+
 	std::cout << '\n';
 	return 0;
 }
