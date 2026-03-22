@@ -30,6 +30,7 @@ endforeach()
 add_subdirectory ("01_Separate_compilation/11_0_01_DigitalTime")
 add_subdirectory ("01_Separate_compilation/11_5_Digital_Time_change")
 add_subdirectory ("02_Namespaces/11_0_03_Digital_time_namespace")
+add_subdirectory ("02_Namespaces/11_0_04_Compilation_Unit_Digital_time")
 
 
 # TODO: Add tests and install targets if needed.

@@ -3,8 +3,8 @@
 // 24-hour notation, as in 9:30 for 9:30 AM and 14:45 for 2:45 PM.
 
 
-#ifndef 11_0_04_DTIME_H
-#define 11_0_04_DTIME_H
+#ifndef DTIME_H_11_0_04
+#define DTIME_H_11_0_04
 
 #include <iostream>
 
