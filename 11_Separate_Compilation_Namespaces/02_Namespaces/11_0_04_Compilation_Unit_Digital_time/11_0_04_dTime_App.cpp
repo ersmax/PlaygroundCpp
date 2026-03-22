@@ -36,3 +36,4 @@ void readHour(int& theHour, int& theMinute)
 		std::cin >> theHour >> separator >> theMinute;
 	} while (separator != ':');
 }
+
