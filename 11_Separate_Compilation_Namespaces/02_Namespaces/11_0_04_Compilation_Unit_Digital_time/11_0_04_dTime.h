@@ -18,8 +18,8 @@ namespace myNamespace
 		// Initialize the time value to 0:00 (midnight)
 
 		DigitalTime(int theHour, int theMinute);
-		getHour() const;
-		getMinute() const;
+		int getHour() const;
+		int getMinute() const;
 		void advance(int minutesAdded);
 		//   Postcondition: changes the time to minutesAdded minutes later
 
