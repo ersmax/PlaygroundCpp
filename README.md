@@ -368,6 +368,22 @@ Setup: Visual Studio 2026 with C++20 or later standard, CMake 3.25 or higher.
 
 ---
 
+## Chapter 11. Separate Compilation and Namespaces
+
+### Ch.11 Section 1 Separate Compilation
+
+- [Digital Time](11_Separate_Compilation_Namespaces/01_Separate_compilation/11_0_01_DigitalTime/11_0_01_dTime_App.cpp) - Demonstrates separate compilation with a `DigitalTime` class split into interface (`11_0_01_dTime.h`), implementation (`11_0_01_dTime.cpp`), and an application file that uses the class.
+1. [Interface Implementation Application](11_Separate_Compilation_Namespaces/01_Separate_compilation/11_1_Interface_Implementation_Application.cpp) - Explains the three components of separate compilation: interface (header), implementation (source), and application (main program).
+2. [Interface extensions](11_Separate_Compilation_Namespaces/01_Separate_compilation/11_2_Interface_extensions.cpp) - Notes that the interface file (header, `.h`) is the file whose name ends in `.h`; implementation and application files are `.cpp`.
+3. [Compilation vs Implementation](11_Separate_Compilation_Namespaces/01_Separate_compilation/11_3_Compilation_Implementation.cpp) - Clarifies that only the implementation file needs to be compiled directly; the interface is included via `#include`.
+4. [Class change recompilation](11_Separate_Compilation_Namespaces/01_Separate_compilation/11_4_Class_separation_compilation.cpp) - Explains which files must be recompiled and relinked when the class implementation changes while the interface stays the same.
+5. [Digital Time representation change](11_Separate_Compilation_Namespaces/01_Separate_compilation/11_5_Digital_Time_change/11_5_Digital_Time_Change.cpp) - Describes, in words, how to modify the original `DigitalTime` interface and implementation to use a single `minute` field internally and summarizes the concrete changes realized in `11_5_dTime.h` / `11_5_dTime.cpp`.
+5. [Digital Time (minutes-since-midnight)](11_Separate_Compilation_Namespaces/01_Separate_compilation/11_5_Digital_Time_change/11_5_dTime_App.cpp) - Variant of `DigitalTime` whose implementation (`11_5_dTime.h` / `11_5_dTime.cpp`) stores time as total minutes since midnight instead of separate hour and minute fields.
+
+### Ch.11 Section 2 Namespaces
+
+---
+
 ## 21. Extra
 
 ### 21. Section 01 Smart Pointers
