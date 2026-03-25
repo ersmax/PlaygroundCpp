@@ -372,7 +372,7 @@ Setup: Visual Studio 2026 with C++20 or later standard, CMake 3.25 or higher.
 
 ### Ch.11 Section 1 Separate Compilation
 
-- [Digital Time](11_Separate_Compilation_Namespaces/01_Separate_compilation/11_0_01_DigitalTime/11_0_01_dTime_App.cpp) - Demonstrates separate compilation with a `DigitalTime` class split into interface (`11_0_01_dTime.h`), implementation (`11_0_01_dTime.cpp`), and an application file that uses the class.
+- [Digital Time](11_Separate_Compilation_Namespaces/01_Separate_compilation/11_0_01_DigitalTime/11_0_01_dTime_App.cpp) - Reads a time in 24-hour notation, then uses the `DigitalTime` class (defined in `11_0_01_dTime.h` / `11_0_01_dTime.cpp`) to advance the time by 15 minutes and then by 2 hours and 15 minutes, demonstrating separate compilation plus overloaded `>>`, `<<`, and `==` for a time-of-day type.
 1. [Interface Implementation Application](11_Separate_Compilation_Namespaces/01_Separate_compilation/11_1_Interface_Implementation_Application.cpp) - Explains the three components of separate compilation: interface (header), implementation (source), and application (main program).
 2. [Interface extensions](11_Separate_Compilation_Namespaces/01_Separate_compilation/11_2_Interface_extensions.cpp) - Notes that the interface file (header, `.h`) is the file whose name ends in `.h`; implementation and application files are `.cpp`.
 3. [Compilation vs Implementation](11_Separate_Compilation_Namespaces/01_Separate_compilation/11_3_Compilation_Implementation.cpp) - Clarifies that only the implementation file needs to be compiled directly; the interface is included via `#include`.
@@ -381,6 +381,29 @@ Setup: Visual Studio 2026 with C++20 or later standard, CMake 3.25 or higher.
 5. [Digital Time (minutes-since-midnight)](11_Separate_Compilation_Namespaces/01_Separate_compilation/11_5_Digital_Time_change/11_5_dTime_App.cpp) - Variant of `DigitalTime` whose implementation (`11_5_dTime.h` / `11_5_dTime.cpp`) stores time as total minutes since midnight instead of separate hour and minute fields.
 
 ### Ch.11 Section 2 Namespaces
+
+- [Digital Time (namespace)](11_Separate_Compilation_Namespaces/02_Namespaces/11_0_03_Digital_time_namespace/11_0_03_dTime_App.cpp) - Wraps the `DigitalTime` class and its operators inside the `myNamespace` namespace and uses a `using` declaration to bring `DigitalTime` into scope in `main`.
+- [Digital Time (unnamed namespace helpers)](11_Separate_Compilation_Namespaces/02_Namespaces/11_0_04_Compilation_Unit_Digital_time/11_0_04_dTime_App.cpp) - Uses helper functions `readHour`, `readMinute`, and `digitToInt` placed in an unnamed namespace inside the implementation file to limit their visibility to that compilation unit while the application defines its own global `readHour`.
+- [Namespace grouping](11_Separate_Compilation_Namespaces/02_Namespaces/11_0_02_Namespace_grouping.cpp) - Demonstrates defining functions in multiple namespaces (`Space1`, `Space2`, and global), then using `using namespace` and qualified names to control which `greeting` is called.
+6. [Greeting conflict](11_Separate_Compilation_Namespaces/02_Namespaces/11_6_Greeting_Conflict.cpp) - Explains why reusing the same function name `greeting()` in both a namespace and the global namespace can cause ambiguity when both are brought into scope.
+7. [Overloading across namespaces](11_Separate_Compilation_Namespaces/02_Namespaces/11_7_Overloading.cpp) - Shows that adding an overloaded `greeting(int howMany)` to the global namespace is allowed even when `greeting()` without parameters exists in another namespace.
+8. [Using declaration vs directive](11_Separate_Compilation_Namespaces/02_Namespaces/11_8_Using_declaration_using_directive.cpp) - Traces name lookup and output order when `using` declarations select between `Hello::message`, `GoodBye::message`, and the global `message` function.
+9. [Namespace-qualified typedefs](11_Separate_Compilation_Namespaces/02_Namespaces/11_9_Namespace.cpp) - Declares a function `wow` that takes parameters of type `speed` from two different namespaces, illustrating how to disambiguate typedefs with namespace qualifiers.
+10. [Using declaration conflict](11_Separate_Compilation_Namespaces/02_Namespaces/11_10_Using_declaration_conflict.cpp) - Discusses why replacing several `using` declarations with `using namespace` directives would not change program behavior but why declarations are often preferred.
+11. [Unnamed vs named namespace scope](11_Separate_Compilation_Namespaces/02_Namespaces/11_11_Namespaces_grouping_scope.cpp) - Shows how an unnamed-namespace `message` and `Sally::message` are selected depending on `using` declarations and block scope.
+12. [Nested namespaces](11_Separate_Compilation_Namespaces/02_Namespaces/11_12_Nested_namespaces.cpp) - Uses `Outer` and `Outer::Inner` namespaces to demonstrate nested namespaces, qualified calls, and `using namespace Outer`.
+
+--- 
+
+## Chapter 14. Inheritance
+
+### Ch.14 Section 1 Inheritance Basics
+
+
+
+### Ch.14 Section 2 Programming with inheritance
+
+
 
 ---
 
