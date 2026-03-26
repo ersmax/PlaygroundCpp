@@ -8,6 +8,7 @@
 # List all folders
 set(FOLDERS
     "01_Smart_Pointers"
+    "02_Other"
 )
 
 # Automatically get all .cpp and headers files 

@@ -8,7 +8,6 @@
 # List all folders that contain single-file examples
 set(FOLDERS
     "01_Inheritance_basics"
-    "02_Programming_with_inheritance"
 )
 
 # Automatically get all .cpp and headers files in the listed folders
@@ -28,7 +27,5 @@ endforeach()
 
 # Multi-source examples live in their own subfolders with local CMakeLists.txt
 add_subdirectory ("01_Inheritance_basics/14_0_01_Employee")
-
-
 
 # TODO: Add tests and install targets if needed.
