@@ -6,7 +6,6 @@
 #include <iostream>
 #include "14_0_01_Hourly_Employee.h"
 
-
 namespace myNamespaceEmployees
 {
 	HourlyEmployee::HourlyEmployee() : Employee(), wageRate(0), hours(0)
