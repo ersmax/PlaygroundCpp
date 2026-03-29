@@ -7,7 +7,8 @@
 
 # List all folders that contain single-file examples
 set(FOLDERS
-    "01_Inheritance_basics"
+    "01_Separate_compilation"
+    "02_Namespaces"
 )
 
 # Automatically get all .cpp and headers files in the listed folders
@@ -20,25 +21,16 @@ foreach(folder ${FOLDERS})
         # Executable name = filename without extension
         get_filename_component(exec_name ${source} NAME_WE)
 
-        # Some examples depend on implementation files in subfolders.
-        # Handle those cases explicitly while keeping the generic behavior
-        # for all the other single-file examples.
-        if(exec_name STREQUAL "14_01_Employee_Show_data")
-            add_executable(${exec_name}
-                ${source}
-                ${HEADERS}
-                "01_Inheritance_basics/14_0_01_Employee/14_0_01_Employee.cpp"
-                "01_Inheritance_basics/14_0_01_Employee/14_0_01_Hourly_Employee.cpp"
-                "01_Inheritance_basics/14_0_01_Employee/14_0_01_Salaried_Employee.cpp"
-            )
-        else()
-            # Default: standalone example target from a single source file
-            add_executable(${exec_name} ${source} ${HEADERS})
-        endif()
+        # Create standalone example target from a single source file
+        add_executable(${exec_name} ${source} ${HEADERS})
     endforeach()
 endforeach()
 
 # Multi-source examples live in their own subfolders with local CMakeLists.txt
 add_subdirectory ("01_Inheritance_basics/14_0_01_Employee")
+add_subdirectory ("01_Inheritance_basics/14_01_Employee_Show_data")
+add_subdirectory ("01_Inheritance_basics/14_03_Is_Crazy")
 
 # TODO: Add tests and install targets if needed.
+
+

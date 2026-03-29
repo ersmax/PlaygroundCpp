@@ -9,8 +9,8 @@
 // type.An HourlyEmployee is an Employee.A SalariedEmployee is an Employee.
 
 #include <iostream>
-#include "14_0_01_Employee/14_0_01_Hourly_Employee.h"
-#include "14_0_01_Employee/14_0_01_Salaried_Employee.h"
+#include "../14_0_01_Employee/14_0_01_Hourly_Employee.h"
+#include "../14_0_01_Employee/14_0_01_Salaried_Employee.h"
 
 
 void showEmployeeData(const myNamespaceEmployees::Employee& object);
@@ -34,7 +34,5 @@ void showEmployeeData(const myNamespaceEmployees::Employee& object)
 	using myNamespaceEmployees::Employee;
 	std::cout << "Name: " << object.getName() << '\n';
 	std::cout << "Social Security Number: " << object.getSsn() << '\n';
-	std::cout << "Net pay: " << object.getNetPay() << '\n';
-	Employee::printCheck();
 	std::cout << std::string(25, '_') << '\n';
 }
