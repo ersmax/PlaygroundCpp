@@ -24,7 +24,7 @@ namespace myNamespaceEmployees
 	void SalariedEmployee::printCheck()
 	{
 		setNetPay(salary);
-		std::cout << '\n' << std::string(25, '_');
+		std::cout << '\n' << std::string(25, '_') << '\n';
 		std::cout << "Pay to the order of " << getName() << '\n';
 		std::cout << "The sum of " << getNetPay() << " Dollars\n";
 		std::cout << std::string(25, '_') << '\n';
