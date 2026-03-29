@@ -20,8 +20,21 @@ foreach(folder ${FOLDERS})
         # Executable name = filename without extension
         get_filename_component(exec_name ${source} NAME_WE)
 
-        # Create standalone example target from a single source file
-        add_executable(${exec_name} ${source} ${HEADERS})
+        # Some examples depend on implementation files in subfolders.
+        # Handle those cases explicitly while keeping the generic behavior
+        # for all the other single-file examples.
+        if(exec_name STREQUAL "14_01_Employee_Show_data")
+            add_executable(${exec_name}
+                ${source}
+                ${HEADERS}
+                "01_Inheritance_basics/14_0_01_Employee/14_0_01_Employee.cpp"
+                "01_Inheritance_basics/14_0_01_Employee/14_0_01_Hourly_Employee.cpp"
+                "01_Inheritance_basics/14_0_01_Employee/14_0_01_Salaried_Employee.cpp"
+            )
+        else()
+            # Default: standalone example target from a single source file
+            add_executable(${exec_name} ${source} ${HEADERS})
+        endif()
     endforeach()
 endforeach()
 

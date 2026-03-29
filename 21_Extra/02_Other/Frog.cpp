@@ -56,17 +56,21 @@
  Copyright 2009–2016 by Codility Limited. All Rights Reserved. Unauthorized copying, publication or disclosure prohibited.
  */
 
-#include <vector>
 #include <iostream>
+#include <vector>
+#include <unordered_set>
 
 bool full(const std::vector<int>& leaves);
 
 int solution(int X, const std::vector<int>& A);
 
+int solutionHashTable(int X, const std::vector<int>& A);
+
 int main()
 {
 	std::vector<int> time = {1, 3, 1, 4, 2, 5, 4, 4};
-	std::cout << solution(5, time);
+	std::cout << "Trivial solution: " << solution(5, time) << '\n';
+	std::cout << "Hash solution: " << solutionHashTable(5, time) << '\n';
 
 	return 0;
 }
@@ -77,6 +81,23 @@ bool full(const std::vector<int>& leaves)
 		if (element == 0)
 			return false;
 	return true;
+}
+
+int solutionHashTable(int X, const std::vector<int>& A)
+{
+	std::unordered_set<int> covered;
+	covered.reserve(X);
+
+	for (int idx = 0; idx < static_cast<int>(A.size()); idx++)
+	{
+		int position = A[idx];
+		covered.insert(position);
+		// add position if it is not already there (runs in O(1) time), else do nothing
+
+		if (static_cast<int>(covered.size()) == X)
+			return idx;
+	}
+	return -1;
 }
 
 int solution(const int X, const std::vector<int>& A)
