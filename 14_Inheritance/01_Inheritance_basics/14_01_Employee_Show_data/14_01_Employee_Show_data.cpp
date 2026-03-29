@@ -20,10 +20,13 @@ int main()
 	using myNamespaceEmployees::HourlyEmployee;
 	using myNamespaceEmployees::SalariedEmployee;
 
-	const HourlyEmployee joe("Mighty Joe", "123-45-6789", 20.50, 40);
-	const SalariedEmployee boss("Mr. Big Shot", "987-65-4321", 10500.50);
+	HourlyEmployee joe("Mighty Joe", "123-45-6789", 20.50, 40);
+	SalariedEmployee boss("Mr. Big Shot", "987-65-4321", 10500.50);
 	showEmployeeData(joe);
+	joe.printCheck();
+
 	showEmployeeData(boss);
+	boss.printCheck();
 
 	std::cout << '\n';
 	return 0;

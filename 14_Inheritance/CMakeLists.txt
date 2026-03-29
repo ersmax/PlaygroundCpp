@@ -30,6 +30,7 @@ endforeach()
 add_subdirectory ("01_Inheritance_basics/14_0_01_Employee")
 add_subdirectory ("01_Inheritance_basics/14_01_Employee_Show_data")
 add_subdirectory ("01_Inheritance_basics/14_03_Is_Crazy")
+add_subdirectory ("01_Inheritance_basics/14_06_Titled_Employee")
 
 # TODO: Add tests and install targets if needed.
 
