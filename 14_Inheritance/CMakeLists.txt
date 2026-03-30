@@ -32,6 +32,7 @@ add_subdirectory ("01_Inheritance_basics/14_01_Employee_Show_data")
 add_subdirectory ("01_Inheritance_basics/14_03_Is_Crazy")
 add_subdirectory ("01_Inheritance_basics/14_06_Titled_Employee")
 add_subdirectory ("02_Programming_with_inheritance/14_0_02_Partially_Filled_Array_Doubles")
+add_subdirectory ("02_Programming_with_inheritance/14_0_03_Partially_Filled_Private")
 
 # TODO: Add tests and install targets if needed.
 
