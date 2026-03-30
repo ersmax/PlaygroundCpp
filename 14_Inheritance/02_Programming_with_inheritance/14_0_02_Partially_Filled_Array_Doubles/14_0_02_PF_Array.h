@@ -33,7 +33,7 @@ namespace myNamespace
 		//   Postcondition: read and change access to elements 0 through used-1
 
 	protected:
-		DoublePtr ptrArrayA;	
+		DoublePtr arrayA;	
 		//   Precondition: pointer to an array of doubles
 		int capacity;
 		//   Precondition: size of the array

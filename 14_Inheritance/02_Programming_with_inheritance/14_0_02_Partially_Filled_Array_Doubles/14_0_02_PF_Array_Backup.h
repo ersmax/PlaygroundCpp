@@ -17,7 +17,7 @@ namespace myNamespace
 		PFArrayDBack();
 		//   Postcondition: Initializes the backup array with capacity of 50
 		PFArrayDBack(int capacityValue);
-		PFArrayDBack(const PFArrayDBack& object);
+		PFArrayDBack(const PFArrayDBack& anotherObject);
 		//   Precondition: copy constructor
 		~PFArrayDBack();
 		PFArrayDBack& operator =(const PFArrayDBack& rightSide);
@@ -28,8 +28,10 @@ namespace myNamespace
 		// If backup has never been invoked, this empties the partially filled array.	
 
 	private:
-		DoublePtr ptrArrayB;
+		DoublePtr arrayB;
+		//   Precondition: pointer to an array of backup  
 		int usedB;
+		//   Precondition: number of elements present in the backup array
 	};
 	
 } // myNamespace

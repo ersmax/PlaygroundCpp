@@ -8,19 +8,19 @@ namespace myNamespace
 {
 	PFArrayD::PFArrayD() : capacity(50), used(0)
 	{
-		ptrArrayA = new double[capacity];
+		arrayA = new double[capacity];
 	}
 
 	PFArrayD::PFArrayD(const int capacityValue) : capacity(capacityValue), used(0)
 	{
-		ptrArrayA = new double[capacity];
+		arrayA = new double[capacity];
 	}
 
 	PFArrayD::PFArrayD(const PFArrayD& pfaObject) : capacity(pfaObject.capacity), used(pfaObject.used)
 	{
-		ptrArrayA = new double[capacity];
+		arrayA = new double[capacity];
 		for (int idx = 0; idx < pfaObject.used; idx++)
-			ptrArrayA[idx] = pfaObject.ptrArrayA[idx];
+			arrayA[idx] = pfaObject.arrayA[idx];
 	}
 
 	PFArrayD& PFArrayD::operator =(const PFArrayD& rightSide)
@@ -29,21 +29,21 @@ namespace myNamespace
 
 		if (capacity != rightSide.capacity)
 		{
-			delete [] ptrArrayA;
-			ptrArrayA = new double[rightSide.capacity];
+			delete [] arrayA;
+			arrayA = new double[rightSide.capacity];
 		}
 
 		capacity = rightSide.capacity;
 		used = rightSide.used;
 		for (int idx = 0; idx < rightSide.used; idx++)
-			ptrArrayA[idx] = rightSide.ptrArrayA[idx];
+			arrayA[idx] = rightSide.arrayA[idx];
 
 		return *this;
 	}
 
 	PFArrayD::~PFArrayD()
 	{
-		delete [] ptrArrayA;
+		delete [] arrayA;
 	}
 
 	void PFArrayD::addElement(const double element)
@@ -53,7 +53,7 @@ namespace myNamespace
 			std::cout << "Attempt to exceed capacity in PFArrayD.\n";
 			std::exit(1);
 		}
-		ptrArrayA[used] = element;
+		arrayA[used] = element;
 		used++;
 	}
 
@@ -72,7 +72,7 @@ namespace myNamespace
 			std::cout << "Illegal index in Partially Filled array of doubles\n";
 			std::exit(1);
 		}
-		return ptrArrayA[idx];
+		return arrayA[idx];
 	}
 
 } // myNamespace
