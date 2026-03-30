@@ -73,6 +73,7 @@ namespace myNamespace
 		//for (int idx = 0; idx < usedB; idx++)
 		//	this->operator [](idx) = arrayB[idx];
 
+		// Old implementation (protected member in base class):
 		// used = usedB;
 		// for (int idx = 0; idx < used; idx++)
 		//	 arrayA[idx] = arrayB[idx];
