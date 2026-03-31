@@ -410,7 +410,12 @@ Setup: Visual Studio 2026 with C++20 or later standard, CMake 3.25 or higher.
 
 ### Ch.14 Section 2 Programming with inheritance
 
-
+- [Partially filled array with backup](14_Inheritance/02_Programming_with_inheritance/14_0_02_Partially_Filled_Array_Doubles/14_0_02_Application.cpp) - Implements `PFArrayD` (partially filled array of doubles) and derived `PFArrayDBack`, which adds a backup buffer and `backup`/`restore` operations, and tests them via interactive input.
+- [Partially filled array with private base](14_Inheritance/02_Programming_with_inheritance/14_0_03_Partially_Filled_Private/14_0_03_Application.cpp) - Reimplements `PFArrayD` with private data members and updates `PFArrayDBack` to use only the base-class public interface (`getCapacity`, `operator[]`, `addElement`) to perform backup/restore.
+8. [Constructor/destructor order](14_Inheritance/02_Programming_with_inheritance/14_08_Order_calls/14_08_Order_calls.cpp) - Explains the order in which constructors (base to most-derived) and destructors (most-derived to base) are invoked in a multi-level inheritance hierarchy (`Parent`, `Child`, `Grandchild`).
+9. [Default constructor chaining](14_Inheritance/02_Programming_with_inheritance/14_09_Deafult_constructor/14_09_Default_constructor.cpp) - Shows that if a derived-class constructor does not explicitly call a base-class constructor, the base's default constructor is invoked automatically.
+10. [Implicit upcast](14_Inheritance/02_Programming_with_inheritance/14_10_Implicit_upcast/14_10_Implicit_upcast.cpp) - Notes that you can pass a `PFArrayDBack` object where a `PFArrayD` parameter is expected because a derived object "is a" base-class object (implicit upcasting).
+11. [Class access to private members](14_Inheritance/02_Programming_with_inheritance/14_11_Class_access_to_private_members/14_11_Class_access_to_private_members.cpp) - Clarifies that a member function of a class can access private data members of any object of that same class, not only `this`.
 
 ---
 
