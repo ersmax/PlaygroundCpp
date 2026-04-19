@@ -18,7 +18,7 @@ namespace myNamespaceSale
 		// of the price.
 		double getDiscount() const;
 		void setDiscount(double newDiscount);
-		virtual double bill() const override;
+		virtual double bill() const override final;
 	private:
 		double discount;
 	};
