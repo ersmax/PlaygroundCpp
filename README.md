@@ -419,9 +419,17 @@ Setup: Visual Studio 2026 with C++20 or later standard, CMake 3.25 or higher.
 
 ---
 
+
 ## Chapter 15. Polymorphism and Virtual Functions
 
 ### Ch.15 Section 1 Virtual Function basics
+
+- [Sale](15_Polymorphism_Virtual_functions/01_Virtual_function_basics/15_0_01_Sale/15_0_01_Application.cpp) – Demonstrates virtual function `bill()` in base class `Sale` and derived class `DiscountSale`, showing late binding and polymorphism in price comparison and savings calculation.
+- [Employee test application](15_Polymorphism_Virtual_functions/01_Virtual_function_basics/15_0_02_Employee/15_0_02_Application.cpp) – Tests the abstract base class `Employee` and derived classes `HourlyEmployee` and `SalariedEmployee`, demonstrating pure virtual functions and polymorphic behavior.
+1. [Definitions: Polymorphism, Late Binding, Virtual Function](15_Polymorphism_Virtual_functions/01_Virtual_function_basics/15_01_Late_binding_Polymorphism_Virtual_functions/15_01_Definitions_Polymorphism_Virtual_functions.md) – Explains the difference and relationship among virtual functions, late binding, and polymorphism.
+2. [Redefining vs Overriding](15_Polymorphism_Virtual_functions/01_Virtual_function_basics/15_02_Redefining_vs_Overriding/15_02_Redefining_vs_Overriding.md) – Discusses the effect of removing `virtual` from a base class function and how it changes program output.
+3. [Abstract class legality](15_Polymorphism_Virtual_functions/01_Virtual_function_basics/15_03_Abstract_class/15_03_Abstract_class.md) – Explains whether an abstract class can have all pure virtual functions and the implications for object instantiation and type usage.
+4. [Legal function definitions](15_Polymorphism_Virtual_functions/01_Virtual_function_basics/15_04_Legal_functions_definitions/15_04_Legal_functions_definitions.md) – Analyzes which function definitions and usages are legal with abstract classes and derived classes.
 
 ### Ch.15 Section 2 Pointers and Virtual functions
 
