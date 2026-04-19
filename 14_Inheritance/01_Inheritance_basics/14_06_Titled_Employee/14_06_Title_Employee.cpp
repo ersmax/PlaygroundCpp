@@ -1,6 +1,6 @@
 #include "14_06_Titled_Employee.h"
 
-namespace myNamespaceEmployees
+namespace myNamespaceEmployee
 {
 	TitleEmployee::TitleEmployee() : SalariedEmployee(), title("No title")
 	{ /* Body intentionally left empty */ }

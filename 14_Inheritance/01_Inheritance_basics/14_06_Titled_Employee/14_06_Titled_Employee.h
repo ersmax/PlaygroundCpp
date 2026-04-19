@@ -7,7 +7,7 @@ the name.Do not bother with #include directives or namespace details.
 
 #include "../14_0_01_Employee/14_0_01_Salaried_Employee.h"
 
-namespace myNamespaceEmployees
+namespace myNamespaceEmployee
 {
 	 class TitleEmployee : public SalariedEmployee
 	 {

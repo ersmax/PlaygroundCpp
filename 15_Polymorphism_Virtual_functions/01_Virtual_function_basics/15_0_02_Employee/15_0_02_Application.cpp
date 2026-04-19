@@ -2,13 +2,14 @@
 // and the derived classes HourlyEmployee and SalariedEmployee
 
 #include <iostream>
-#include "14_0_01_Hourly_Employee.h"
-#include "14_0_01_Salaried_Employee.h"
+#include "15_0_02_Hourly_Employee.h"
+#include "15_0_02_Salaried_Employee.h"
 
 int main( )
 {
-	using myNamespaceEmployee::HourlyEmployee;
-	using myNamespaceEmployee::SalariedEmployee;
+	using myNamespaceEmployees::HourlyEmployee;
+	using myNamespaceEmployees::SalariedEmployee;
+	using myNamespaceEmployees::Employee;
 
 	HourlyEmployee joe;
 	joe.setName("Mighty Joe");
@@ -23,6 +24,13 @@ int main( )
 	SalariedEmployee boss("Mr. Big Shot", "987-65-4321", 10500.50);
 	std::cout << "Check for " << boss.getName() << '\n';
 	boss.printCheck();
+
+	/* Cannot instantiate an abstract class */
+	//Employee test;
+	//test.setName("A test");
+	//test.setSsn("123-456-7890");
+	//test.setNetPay(1234);
+	//test.printCheck();
 
 	std::cout << '\n';
 	return 0;

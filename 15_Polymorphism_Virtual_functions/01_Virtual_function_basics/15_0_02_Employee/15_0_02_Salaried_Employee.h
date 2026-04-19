@@ -1,11 +1,11 @@
-//   This is the header file 14_0_01_Salaried_Employee.h.
+//   This is the header file 15_0_01_Salaried_Employee.h.
 // This is the interface for the class SalariedEmployee.
-#ifndef SALARIED_EMPLOYEE_14_0_01_H
-#define SALARIED_EMPLOYEE_14_0_01_H
+#ifndef SALARIED_EMPLOYEE_15_0_02_H
+#define SALARIED_EMPLOYEE_15_0_02_H
 
-#include "14_0_01_Employee.h"
+#include "15_0_02_Employee.h"
 
-namespace myNamespaceEmployee
+namespace myNamespaceEmployees
 {
 	class SalariedEmployee : public Employee
 	{
@@ -14,11 +14,11 @@ namespace myNamespaceEmployee
 		SalariedEmployee(const std::string& theName, const std::string& theSsn, double theWeeklySalary);
 		double getSalary() const;
 		void setSalary(double newSalary);
-		void printCheck();
+		virtual void printCheck() override final;
 		// Override base class function behavior of printCheck()
 	private:
 		double salary;	// weekly
 	};
 } // myNamespaceEmployees
 
-#endif
+#endif // SALARIED_EMPLOYEE_15_0_02_H

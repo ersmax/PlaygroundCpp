@@ -1,12 +1,12 @@
-//   This is the header file 14_0_01_Hourly_Employee.
+//   This is the header file 15_0_02_Hourly_Employee.
 // This is the interface for the class HourlyEmployee.
 
-#ifndef HOURLY_EMPLOYEE_14_0_01_H
-#define HOURLY_EMPLOYEE_14_0_01_H
+#ifndef HOURLY_EMPLOYEE_15_0_02_H
+#define HOURLY_EMPLOYEE_15_0_02_H
 
-#include "14_0_01_Employee.h"
+#include "15_0_02_Employee.h"
 
-namespace myNamespaceEmployee
+namespace myNamespaceEmployees
 {
 	class HourlyEmployee : public Employee
 	{
@@ -18,7 +18,7 @@ namespace myNamespaceEmployee
 		void setHours(double hoursWorked);
 		double getRate() const;
 		double getHours() const;
-		void printCheck();
+		virtual void printCheck() override final;
 		// Override base class function behavior of printCheck()
 	private:
 		double wageRate;
@@ -27,4 +27,4 @@ namespace myNamespaceEmployee
 	
 } // myNamespaceEmployees
 
-#endif // HOURLY_EMPLOYEE_14_0_01_H
+#endif // HOURLY_EMPLOYEE_15_0_02_H

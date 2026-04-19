@@ -1,12 +1,12 @@
-//   This is the file 14_0_01_Salaried_Employee.cpp.
+//   This is the file 15_0_02_Salaried_Employee.cpp.
 // This is the implementation file for the class SalariedEmployee.
 // The interface for the class SalariedEmployee is in the header 
-// file 14_0_01_Salaried_Employee.h.
+// file 15_0_02_Salaried_Employee.h.
 
 #include <iostream>
-#include "14_0_01_Salaried_Employee.h"
+#include "15_0_02_Salaried_Employee.h"
 
-namespace myNamespaceEmployee
+namespace myNamespaceEmployees
 {
 	SalariedEmployee::SalariedEmployee() : Employee(), salary(0)
 	{ /* Body intentionally left empty */ }
@@ -21,7 +21,7 @@ namespace myNamespaceEmployee
 
 	double SalariedEmployee::getSalary() const { return salary; }
 
-	void SalariedEmployee::printCheck()
+	void SalariedEmployee::printCheck() 
 	{
 		setNetPay(salary);
 		std::cout << '\n' << std::string(25, '_') << '\n';

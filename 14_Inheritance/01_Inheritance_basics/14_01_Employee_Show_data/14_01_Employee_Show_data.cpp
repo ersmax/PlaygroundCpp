@@ -13,12 +13,12 @@
 #include "../14_0_01_Employee/14_0_01_Salaried_Employee.h"
 
 
-void showEmployeeData(const myNamespaceEmployees::Employee& object);
+void showEmployeeData(const myNamespaceEmployee::Employee& object);
 
 int main()
 {
-	using myNamespaceEmployees::HourlyEmployee;
-	using myNamespaceEmployees::SalariedEmployee;
+	using myNamespaceEmployee::HourlyEmployee;
+	using myNamespaceEmployee::SalariedEmployee;
 
 	HourlyEmployee joe("Mighty Joe", "123-45-6789", 20.50, 40);
 	SalariedEmployee boss("Mr. Big Shot", "987-65-4321", 10500.50);
@@ -32,9 +32,9 @@ int main()
 	return 0;
 }
 
-void showEmployeeData(const myNamespaceEmployees::Employee& object)
+void showEmployeeData(const myNamespaceEmployee::Employee& object)
 {
-	using myNamespaceEmployees::Employee;
+	using myNamespaceEmployee::Employee;
 	std::cout << "Name: " << object.getName() << '\n';
 	std::cout << "Social Security Number: " << object.getSsn() << '\n';
 	std::cout << std::string(25, '_') << '\n';

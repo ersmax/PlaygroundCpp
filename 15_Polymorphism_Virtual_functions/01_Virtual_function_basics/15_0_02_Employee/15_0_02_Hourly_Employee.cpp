@@ -1,12 +1,12 @@
-//   This is the file 14_0_01_Hourly_Employee.cpp.
+//   This is the file 15_0_02_Hourly_Employee.cpp.
 // This is the implementation for the class HourlyEmployee.
 // The interface for the class HourlyEmployee is in the header
-// file 14_0_01_Hourly_Employee.h.
+// file 15_0_02_Hourly_Employee.h.
 
 #include <iostream>
-#include "14_0_01_Hourly_Employee.h"
+#include "15_0_02_Hourly_Employee.h"
 
-namespace myNamespaceEmployee
+namespace myNamespaceEmployees
 {
 	HourlyEmployee::HourlyEmployee() : Employee(), wageRate(0), hours(0)
 	{ /* Body intentionally left empty */ }
@@ -28,7 +28,7 @@ namespace myNamespaceEmployee
 
 	double HourlyEmployee::getRate() const { return wageRate; }
 
-	void HourlyEmployee::printCheck()
+	void HourlyEmployee::printCheck() 
 	{
 		setNetPay(hours * wageRate);
 		std::cout << '\n' << std::string(25, '_') << '\n';

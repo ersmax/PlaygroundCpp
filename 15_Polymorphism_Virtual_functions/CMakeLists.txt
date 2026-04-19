@@ -27,6 +27,7 @@ endforeach()
 
 # Multi-source examples live in their own subfolders with local CMakeLists.txt
 add_subdirectory ("01_Virtual_function_basics/15_0_01_Sale")
+add_subdirectory ("01_Virtual_function_basics/15_0_02_Employee")
 
 # TODO: Add tests and install targets if needed.
 

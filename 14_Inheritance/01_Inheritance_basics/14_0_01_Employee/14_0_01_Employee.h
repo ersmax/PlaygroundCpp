@@ -8,7 +8,7 @@
 
 #include <string>
 
-namespace myNamespaceEmployees
+namespace myNamespaceEmployee
 {
 	class Employee
 	{
