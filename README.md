@@ -419,6 +419,14 @@ Setup: Visual Studio 2026 with C++20 or later standard, CMake 3.25 or higher.
 
 ---
 
+## Chapter 15. Polymorphism and Virtual Functions
+
+### Ch.15 Section 1 Virtual Function basics
+
+### Ch.15 Section 2 Pointers and Virtual functions
+
+---
+
 ## 21. Extra
 
 ### 21. Section 01 Smart Pointers

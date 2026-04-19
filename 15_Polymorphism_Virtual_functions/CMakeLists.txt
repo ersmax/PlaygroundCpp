@@ -1,0 +1,33 @@
+﻿# CMakeList.txt : CMake project, include source and define
+# project specific logic here.
+#
+
+# Add source to this project's executable.
+# add_executable ()
+
+# List all folders that contain single-file examples
+set(FOLDERS
+    "01_Virtual_function_basics"
+)
+
+# Automatically get all .cpp and headers files in the listed folders
+foreach(folder ${FOLDERS})
+    # Gather .cpp and .h files that are directly inside the folder
+    file(GLOB SOURCES CONFIGURE_DEPENDS "${folder}/*.cpp")
+    file(GLOB HEADERS CONFIGURE_DEPENDS "${folder}/*.h")
+
+    foreach(source ${SOURCES})
+        # Executable name = filename without extension
+        get_filename_component(exec_name ${source} NAME_WE)
+
+        # Create standalone example target from a single source file
+        add_executable(${exec_name} ${source} ${HEADERS})
+    endforeach()
+endforeach()
+
+# Multi-source examples live in their own subfolders with local CMakeLists.txt
+# add_subdirectory ("01_Virtual_function_basics/")
+
+# TODO: Add tests and install targets if needed.
+
+
