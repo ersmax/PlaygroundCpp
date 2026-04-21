@@ -8,6 +8,7 @@
 # List all folders that contain single-file examples
 set(FOLDERS
     "01_Virtual_function_basics"
+    "02_Pointers_Virtual_functions"
 )
 
 # Automatically get all .cpp and headers files in the listed folders
@@ -28,6 +29,7 @@ endforeach()
 # Multi-source examples live in their own subfolders with local CMakeLists.txt
 add_subdirectory ("01_Virtual_function_basics/15_0_01_Sale")
 add_subdirectory ("01_Virtual_function_basics/15_0_02_Employee")
+add_subdirectory ("02_Pointers_Virtual_functions/15_0_03_Slicing_problem_Virtual_functions")
 
 # TODO: Add tests and install targets if needed.
 
