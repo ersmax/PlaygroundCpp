@@ -11,7 +11,8 @@ a definition for the additional member variables of the derived class.
 We assume that information is being added (added member variables and functions)
 when in reality it is not.
 
-
+---
+Virtual Functions Table
 To solve the issue, we use polymorphism with virtual functions and pointers to dynamic variables
 to avoid the slicing problem.
 In short:
